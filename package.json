@@ -8,6 +8,7 @@
   "engines": {
     "vscode": "^1.100.0"
   },
+  "packageManager": "pnpm@12.11.2",
   "categories": [
     "Other"
   ],
@@ -602,10 +603,10 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "pnpm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
+    "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src",
     "test": "vscode-test",
     "package": "npx @vscode/vsce package",

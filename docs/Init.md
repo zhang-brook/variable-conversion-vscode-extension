@@ -11,5 +11,5 @@ npx --package yo --package generator-code -- yo code
 ✔ What's the description of your extension? ...
 ✔ Initialize a git repository? Yes
 ✔ Which bundler to use? unbundled
-✔ Which package manager to use? npm
+✔ Which package manager to use? pnpm
 ```

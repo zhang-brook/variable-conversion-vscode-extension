@@ -29,11 +29,12 @@ jobs:
         with:
           ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v5
+      - name: Set up pnpm and Node.js
+        uses: pnpm/setup@v3
         with:
-          node-version: 24
-          cache: npm
+          runtime: node@24
+          install: true
+          cache: true
 
       - name: Validate tag against package version
         env:
@@ -51,23 +52,20 @@ jobs:
           fi
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
 
-      - name: Install dependencies
-        run: npm ci
-
       - name: Package extension
-        run: npx --yes @vscode/vsce@4 package
+        run: pnpm dlx @vscode/vsce@4 package
 
       - name: Publish to Visual Studio Marketplace
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
-        run: npx --yes @vscode/vsce@4 publish --packagePath "variable-conversion-${VERSION}.vsix" -p "$VSCE_PAT" --skip-duplicate
+        run: pnpm dlx @vscode/vsce@4 publish --packagePath "variable-conversion-${VERSION}.vsix" -p "$VSCE_PAT" --skip-duplicate
 
       - name: Publish to Open VSX Registry
         # 2026.10.18 temporarily disabled
         if: false
         env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
-        run: npx --yes ovsx@1 publish "variable-conversion-${VERSION}.vsix" -p "$OVSX_PAT" --skip-duplicate
+        run: pnpm dlx ovsx@1 publish "variable-conversion-${VERSION}.vsix" -p "$OVSX_PAT" --skip-duplicate
 
       - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4

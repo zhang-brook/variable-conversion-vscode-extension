@@ -25,7 +25,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Checkout release tag
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
 
@@ -76,7 +76,7 @@ jobs:
           gh release upload "$TAG" "variable-conversion-${VERSION}.vsix" --clobber
 
       - name: Upload VSIX artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: variable-conversion-${{ env.VERSION }}
           path: variable-conversion-${{ env.VERSION }}.vsix

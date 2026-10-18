@@ -9,7 +9,8 @@
   "version": "2.3.4",
   // logo
   "icon": "image/logo.png",
-  "publisher": "zhang-brook",
+  // ↓ VSCode Marketplace publisher name
+  "publisher": "coder-xiaomo",
   "engines": {
     "vscode": "^1.100.0"
   },

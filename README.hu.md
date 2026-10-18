@@ -163,7 +163,7 @@ Tervezett útvonalstílusok:
 
 ## Visszajelzés
 
-Ha javaslatai vannak a bővítmény fejlesztésével kapcsolatban, vagy hibát talál, kérjük, [nyisson egy issue-t a GitHubon](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Szívesen fogadjuk az angol, 简体中文 vagy 繁體中文 nyelvű visszajelzéseket. Kérjük, kerülje a gépi fordítást, hogy a leírások érthetőek maradjanak.
+Ha javaslatai vannak a bővítmény fejlesztésével kapcsolatban, vagy hibát talál, kérjük, [nyisson egy issue-t a GitHubon](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Szívesen fogadjuk az angol vagy kínai nyelvű visszajelzéseket. Kérjük, kerülje a gépi fordítást, hogy a leírások érthetőek maradjanak.
 
 ## Nyílt forráskód és közreműködés
 

@@ -163,7 +163,7 @@ Plánované styly cest:
 
 ## Zpětná vazba
 
-Máte-li návrhy na zlepšení tohoto rozšíření nebo jste našli chybu, [otevřete prosím issue na GitHubu](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Vítáme zpětnou vazbu v angličtině, 简体中文 nebo 繁體中文. Vyhněte se prosím strojovému překladu, aby popisy zůstaly srozumitelné.
+Máte-li návrhy na zlepšení tohoto rozšíření nebo jste našli chybu, [otevřete prosím issue na GitHubu](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Vítáme zpětnou vazbu v angličtině nebo čínštině. Vyhněte se prosím strojovému překladu, aby popisy zůstaly srozumitelné.
 
 ## Open source a spolupráce
 

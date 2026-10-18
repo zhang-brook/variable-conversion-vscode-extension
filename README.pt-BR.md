@@ -163,7 +163,7 @@ Estilos de caminho planejados:
 
 ## Feedback
 
-Se você tiver sugestões para melhorar esta extensão ou encontrar um bug, [abra uma issue no GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Comentários em English, 简体中文 ou 繁體中文 são bem-vindos. Evite tradução automática para que as descrições permaneçam claras.
+Se você tiver sugestões para melhorar esta extensão ou encontrar um bug, [abra uma issue no GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Comentários em inglês ou chinês são bem-vindos. Evite tradução automática para que as descrições permaneçam claras.
 
 ## Código aberto e contribuição
 

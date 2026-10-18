@@ -163,7 +163,7 @@
 
 ## 意見反應
 
-若您對本擴充功能有任何改進建議，或發現錯誤，請[在 GitHub 上開啟 issue](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues)。歡迎使用 English、简体中文或繁體中文提供意見反應。請避免使用機器翻譯，以確保描述清楚易懂。
+若您對本擴充功能有任何改進建議，或發現錯誤，請[在 GitHub 上開啟 issue](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues)。歡迎使用中文或 English 提供意見反應。請避免使用機器翻譯，以確保描述清楚易懂。
 
 ## 開源與貢獻
 

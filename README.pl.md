@@ -163,7 +163,7 @@ Planowane style ścieżek:
 
 ## Opinie
 
-Jeśli masz sugestie dotyczące ulepszenia tego rozszerzenia lub znalazłeś błąd, [otwórz zgłoszenie na GitHubie](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Mile widziane opinie w języku angielskim, 简体中文 lub 繁體中文. Prosimy unikać tłumaczenia maszynowego, aby opisy pozostały czytelne.
+Jeśli masz sugestie dotyczące ulepszenia tego rozszerzenia lub znalazłeś błąd, [otwórz zgłoszenie na GitHubie](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Mile widziane opinie w języku angielskim lub chińskim. Prosimy unikać tłumaczenia maszynowego, aby opisy pozostały czytelne.
 
 ## Open source i współtworzenie
 

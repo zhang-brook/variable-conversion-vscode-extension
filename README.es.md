@@ -163,7 +163,7 @@ Estilos de ruta planificados:
 
 ## Comentarios
 
-Si tienes sugerencias para mejorar esta extensión o encuentras un error, [abre un issue en GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Se agradecen los comentarios en English, 简体中文 o 繁體中文. Evita el uso de traducción automática para que las descripciones sigan siendo claras.
+Si tienes sugerencias para mejorar esta extensión o encuentras un error, [abre un issue en GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Se agradecen los comentarios en inglés o chino. Evita el uso de traducción automática para que las descripciones sigan siendo claras.
 
 ## Código abierto y contribución
 

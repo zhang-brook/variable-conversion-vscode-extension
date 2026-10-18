@@ -163,7 +163,7 @@
 
 ## 피드백
 
-이 확장의 개선 제안이나 버그를 발견한 경우 [GitHub에서 이슈를 열어 주세요](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). English, 简体中文, 繁體中文로 피드백을 환영합니다. 설명이 명확하게 유지되도록 기계 번역은 피해 주세요.
+이 확장의 개선 제안이나 버그를 발견한 경우 [GitHub에서 이슈를 열어 주세요](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). 영어, 중국어로 피드백을 환영합니다. 설명이 명확하게 유지되도록 기계 번역은 피해 주세요.
 
 ## 오픈 소스 & 기여
 

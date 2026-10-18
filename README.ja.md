@@ -163,7 +163,7 @@
 
 ## フィードバック
 
-この拡張機能の改善案やバグを見つけた場合は、[GitHub で issue を開いてください](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues)。English、简体中文、繁體中文でのフィードバックを歓迎します。説明が明確になるよう、機械翻訳は避けてください。
+この拡張機能の改善案やバグを見つけた場合は、[GitHub で issue を開いてください](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues)。英語、中国語でのフィードバックを歓迎します。説明が明確になるよう、機械翻訳は避けてください。
 
 ## オープンソース & コントリビュート
 

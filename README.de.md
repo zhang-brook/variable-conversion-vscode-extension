@@ -163,7 +163,7 @@ Geplante Pfadstile:
 
 ## Feedback
 
-Wenn Sie Vorschläge zur Verbesserung dieser Erweiterung haben oder einen Fehler finden, [eröffnen Sie bitte ein Issue auf GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Feedback auf Deutsch, Englisch, 简体中文 oder 繁體中文 ist willkommen. Bitte vermeiden Sie maschinelle Übersetzungen, damit die Beschreibungen verständlich bleiben.
+Wenn Sie Vorschläge zur Verbesserung dieser Erweiterung haben oder einen Fehler finden, [eröffnen Sie bitte ein Issue auf GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Feedback auf Englisch oder Chinesisch ist willkommen. Bitte vermeiden Sie maschinelle Übersetzungen, damit die Beschreibungen verständlich bleiben.
 
 ## Open Source & Mitwirken
 

@@ -163,7 +163,7 @@ Planned path styles:
 
 ## Feedback
 
-If you have suggestions for improving this extension, or find a bug, please [open an issue on GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Feedback in English, 简体中文, or 繁體中文 is welcome. Please avoid machine translation so descriptions stay clear.
+If you have suggestions for improving this extension, or find a bug, please [open an issue on GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). Feedback in English or Chinese is welcome. Please avoid machine translation so descriptions stay clear.
 
 ## Open Source & Contribute
 

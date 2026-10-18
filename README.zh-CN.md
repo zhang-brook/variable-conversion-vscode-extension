@@ -177,7 +177,7 @@ GitHub 上这种表格高亮行会有问题（表头不会高亮）
 
 ## 反馈
 
-如果您觉得本插件还不够好用，有更好的使用建议，或者发现了 BUG，欢迎[前往 GitHub 仓库提 issue](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues)。使用简体中文、繁體中文或 English 均可；不建议使用翻译软件，否则可能会让文字描述变得抽象难懂。
+如果您觉得本插件还不够好用，有更好的使用建议，或者发现了 BUG，欢迎[前往 GitHub 仓库提 issue](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues)。使用中文或 English 均可；不建议使用翻译软件，否则可能会让文字描述变得抽象难懂。
 
 ## 开源共建
 

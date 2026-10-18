@@ -163,7 +163,7 @@ Planlanan yol stilleri:
 
 ## Geri bildirim
 
-Bu uzantıyı geliştirmeye yönelik önerileriniz varsa veya bir hata bulduysanız, lütfen [GitHub'da bir sorun bildirin](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). İngilizce, 简体中文 veya 繁體中文 geri bildirimler memnuniyetle karşılanır. Açıklamaların anlaşılır kalması için lütfen makine çevirisinden kaçının.
+Bu uzantıyı geliştirmeye yönelik önerileriniz varsa veya bir hata bulduysanız, lütfen [GitHub'da bir sorun bildirin](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). İngilizce veya Çince geri bildirimler memnuniyetle karşılanır. Açıklamaların anlaşılır kalması için lütfen makine çevirisinden kaçının.
 
 ## Açık kaynak ve katkı
 

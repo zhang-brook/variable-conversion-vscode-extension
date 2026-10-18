@@ -1,111 +1,99 @@
-# 变量命名转换助手 — Variable Conversion (VSCode 扩展)
+[English](README.en.md) | **简体中文**
 
-[Marketplace](https://marketplace.visualstudio.com/items?itemName=coder-xiaomo.variable-conversion) [OpenVSX](https://open-vsx.org/extension/coder-xiaomo/variable-conversion) [GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension.git) [Gitee](https://gitee.com/zhang-brook/variable-conversion-vscode-extension.git)
+<p align="center">
+  <img src="image/logo.png" width="128" alt="Variable Conversion logo">
+</p>
 
-一个强大的变量命名及路径风格转换插件，支持一键转换、循环转换，支持右键菜单、快捷键、状态栏等多种方式使用。<br>
-A powerful variable and path conversion extension. Supports one-key conversion & cyclic conversion. You can use it through the editor menu, shortcut keys and status bar.
+<h1 align="center">变量命名转换助手</h1>
 
-<!--
-> **【近期更新】**
->
-> **v2.2.0 (2025-12-05)**
->
-> - 支持配置目标转换格式顺序
-> - 支持展示当前配置的格式顺序信息弹窗，可显示配置重复项和无效项
-> - 支持从弹窗中点击按钮快捷跳转至设置页对应配置项
->
-> **v2.1.0 (2025-07-14)**
->
-> - 支持仅开启部分目标转换格式 (优化 VSCode 配置项)
->
-> **v2.0.0 (2024-12-15)**
->
-> - 支持 Windows / Unix 路径风格转换（可选中文本中的路径，然后使用  `Ctrl + Alt + /` 快捷键，或点击右键菜单、底部状态栏路径转换按钮轻松实现转换）
- -->
+<p align="center"><em>一个强大的变量命名及路径风格转换插件，适用于 VS Code</em></p>
 
-- ✅ 支持多选区 Support multi-selection
-- ✅ 支持多窗口 Support subwindow
-- ✅ 支持撤回 & 重做 Support undo & redo (Ctrl + Z / Ctrl + Y)
-- ✅ 支持仅开启部分目标转换格式 Support enabling only partial target conversion formats
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=coder-xiaomo.variable-conversion">Marketplace</a> ·
+  <a href="https://open-vsx.org/extension/coder-xiaomo/variable-conversion">OpenVSX</a> ·
+  <a href="https://github.com/zhang-brook/variable-conversion-vscode-extension">GitHub</a> ·
+  <a href="https://gitee.com/zhang-brook/variable-conversion-vscode-extension">Gitee</a>
+</p>
 
-> 🔭 Tips for Chinese users: 如果您无法看到下文图片，请[点这里](https://gitee.com/zhang-brook/variable-conversion-vscode-extension/blob/main/README.md)查看
+支持一键转换、循环转换，可通过右键菜单、快捷键、状态栏等多种方式使用。
 
-## 如何使用？ How to Use?
+- ✅ 支持多选区
+- ✅ 支持多窗口
+- ✅ 支持撤回 & 重做（Ctrl + Z / Ctrl + Y）
+- ✅ 支持仅开启部分目标转换格式
 
-### 循环转换 Cyclic conversion
+> 🔭 提示：如果下方图片无法显示，可[前往 Gitee 查看](https://gitee.com/zhang-brook/variable-conversion-vscode-extension/blob/main/README.md)。
 
-选中需要转换的内容，然后按下 `Ctrl + Alt + [` 或 `Ctrl + Alt + ]` 即可前后灵活切换变量命名方式。 <br>
-Select what you want to convert in the editor, and then press `Ctrl + Alt + [` or `Ctrl + Alt + ]` to flexibly convert variable name flexibly.
+## 如何使用？
+
+### 循环转换
+
+选中需要转换的内容，然后按下 `Ctrl + Alt + [` 或 `Ctrl + Alt + ]`，即可在可用的命名方式之间前后切换。
 
 ![](image/cyclic-conversion.gif)
 
-### 基础转换 Basic conversion
+### 基础转换
 
-**1. 选中代码中需要转换的内容** **Select The Text To Convert**
+**1. 选中代码中需要转换的内容**
 
-![Step1. Select The Text To Convert](image/step1-select-the-text-to-convert.gif)
+![步骤 1：选中需要转换的内容](image/step1-select-the-text-to-convert.gif)
 
-**2. 按 `Shift + Alt + T`** **Press `Shift + Alt + T`**
+**2. 按 `Shift + Alt + T`**
 
-![Step2. Press Shift + Alt + T](image/step2-press-shift-alt-t.gif)
+![步骤 2：按 Shift + Alt + T](image/step2-press-shift-alt-t.gif)
 
-或者点击状态栏的 `变量转换` 按钮<br>
-Or click the `Variable Conversion` button in the status bar
+或者点击状态栏的 `变量转换` 按钮。
 
-![Step2. Press Status Bar Button](image/step2-press-status-bar-button.png)
+![步骤 2：点击状态栏按钮](image/step2-press-status-bar-button.png)
 
-或者右键 -> `变量转换`<br>
-Or right-click -> `Variable Conversion`
+或者右键 → `变量转换`。
 
-![Step2. Variable conversion on the context menu](image/step2-variable-conversion-on-context-menu.png)
+![步骤 2：右键菜单中的变量转换](image/step2-variable-conversion-on-context-menu.png)
 
-或者右键 -> 将变量转换为... <br>
-Or right-click on the selected text -> Convert string to...
+或者右键 → 将变量转换为...。
 
-![Step2. Right-click on the selected text](image/step2-right-click-on-the-selected-text.gif)
+![步骤 2：右键选中文本](image/step2-right-click-on-the-selected-text.gif)
 
-**3. 选择转换目标，转换完成** **Select the conversion target and complete**
+**3. 选择转换目标，转换完成。**
 
-### 路径转换 Path Conversion (Beta)
+### 路径转换（Beta）
 
 > 该功能仍在 Beta 测试阶段，如您在使用过程中遇到问题，欢迎通过文末联系方式进行反馈。
->
-> This feature is still in Beta testing stage, if you encounter any problems during use, please give feedback via the contact information at the end of the article.
 
-路径转换与变量转换操作逻辑基本相同，都可以通过 *右键菜单*、*底部状态栏*、*快捷键* 等方式使用，唯一区别是快捷键的不同。
+路径转换与变量转换的操作逻辑基本相同，都可以通过 *右键菜单*、*底部状态栏*、*快捷键* 等方式使用，唯一区别是快捷键的不同。
 
-路径转换快捷键为：
+路径转换快捷键：
 
 - 切换下一个路径风格：`Ctrl + Alt + /`
--  切换上一个路径风格：`Ctrl + Alt + Shift + /`
+- 切换上一个路径风格：`Ctrl + Alt + Shift + /`
 
-![Path Conversion](image/path-conversion.gif)
+![路径转换](image/path-conversion.gif)
 
-**注：** 目前 `v2.0.0` 版本暂仅支持 `Windows 风格路径` 与 `Unix 风格路径` 互转，所以这两个快捷键目前效果相同。**后续会陆续增加其他更多路径风格**（例如 `Windows Git Bash` 风格，浏览器 `file://` 协议风格等），敬请期待。
+**注：** 目前仅支持 `Windows 风格路径` 与 `Unix 风格路径` 互转，所以这两个快捷键目前效果相同。后续会陆续增加其他更多路径风格（例如 `Windows Git Bash` 风格、浏览器 `file://` 协议风格等），敬请期待。
 
-## 快捷键 Shortcut key
+## 快捷键
 
-| 功能 Feature                                                 | 快捷键 shortcut key    |
-| ------------------------------------------------------------ | ---------------------- |
-| 变量转换 快速选择 Variable Conversion QuickPick              | Shift + Alt + T        |
-| 变量循环转换→上一个 Variable Cyclic Conversion → Previous one | Ctrl + Alt + [         |
-| 变量循环转换→下一个 Variable Cyclic Conversion → Next one    | Ctrl + Alt + ]         |
-| 显示格式顺序信息弹窗 Show Format Order Info Dialog           | Ctrl + Alt + \`        |
-| 路径转换 快速选择 Path Conversion QuickPick                  | Shift + Alt + /        |
-| 路径循环转换→上一个 Path Cyclic conversion → Previous one    | Ctrl + Alt + /         |
-| 路径循环转换→下一个 Path Cyclic conversion → Next one        | Ctrl + Shift + Alt + / |
+| 功能                                 | 快捷键                 |
+| ------------------------------------ | ---------------------- |
+| 变量转换 快速选择                    | Shift + Alt + T        |
+| 变量循环转换 → 上一个                | Ctrl + Alt + [         |
+| 变量循环转换 → 下一个                | Ctrl + Alt + ]         |
+| 显示格式顺序信息弹窗                 | Ctrl + Alt + \`        |
+| 路径转换 快速选择                    | Shift + Alt + /        |
+| 路径循环转换 → 上一个                | Ctrl + Alt + /         |
+| 路径循环转换 → 下一个                | Ctrl + Shift + Alt + / |
 
-> 若您觉得快捷键使用不顺手，您可在 VSCode 左下角齿轮图标⚙ → 键盘快捷方式中自定义修改快捷键。
+> 若您觉得快捷键使用不顺手，可在 VS Code 左下角齿轮图标 ⚙ → 键盘快捷方式中自定义修改。
 
-## 配置项 Configurations
+## 配置项
 
-| 配置项 Configuration Key                | 描述 Description                                             | 配置示例                                        | 默认值   |
-| --------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------- | -------- |
-| `variable-conversion.enabledFormats`    | 配置启用的变量命名方式<br />Configuration of Enabled Variable Naming Conventions. | `{ "xxxCase.enabled": boolean, ... }`           | 见配置项 |
-| `variable-conversion.formatOrder`       | 配置变量命名方式的显示顺序<br />Configure the display order of variable naming conventions. | `[ "camel_case", "pascal_case", "snake_case" ]` | 见配置项 |
-| `variable-conversion.enabledPathFormats` | 配置启用的路径风格<br />Configuration of Enabled Path Formats. | `{ "windowsStyle.enabled": boolean, "unixStyle.enabled": boolean }` | 见配置项 |
+| 配置项                                   | 描述                                       | 配置示例                                                         | 默认值   |
+| ---------------------------------------- | ------------------------------------------ | ---------------------------------------------------------------- | -------- |
+| `variable-conversion.enabledFormats`     | 配置启用的变量命名方式。                   | `{ "xxxCase.enabled": boolean, ... }`                            | 见配置项 |
+| `variable-conversion.formatOrder`        | 配置变量命名方式的显示顺序。               | `[ "camel_case", "pascal_case", "snake_case" ]`                  | 见配置项 |
+| `variable-conversion.enabledPathFormats` | 配置启用的路径风格。                       | `{ "windowsStyle.enabled": boolean, "unixStyle.enabled": boolean }` | 见配置项 |
 
-配置项如下：
+配置项概览：
 
 <!--
 GitHub 上这种表格高亮行会有问题（表头不会高亮）
@@ -134,11 +122,11 @@ GitHub 上这种表格高亮行会有问题（表头不会高亮）
   </tr>
 </table>
 
-## 支持的类型 Support Case
+## 支持的类型
 
 ### 变量转换
 
-| 类型                                       | Case                     | 举例 e.g.        |
+| 类型                                       | Case                     | 举例             |
 | ------------------------------------------ | ------------------------ | ---------------- |
 | 小驼峰(驼峰)命名                           | Camel Case               | fooBar           |
 | 大驼峰(帕斯卡)命名                         | Pascal Case              | FooBar           |
@@ -163,51 +151,42 @@ GitHub 上这种表格高亮行会有问题（表头不会高亮）
 
 ### 路径转换
 
-现已支持的路径风格：
+已支持的路径风格：
 
-| 路径风格     | Style         | 举例 e.g.                                      |
+| 路径风格     | Style         | 举例                                           |
 | ------------ | ------------- | ---------------------------------------------- |
 | Windows 风格 | Windows Style | `C:\Windows\System32` <br />`.\public\assets\` |
 | Unix 风格    | Unix Style    | `/usr/bin`<br />`./public/assets/`             |
 
-尚未支持的路径风格：
+未来计划支持的路径风格：
 
-| 路径风格                   | Case                              | 举例 e.g.                             |
+| 路径风格                   | Style                             | 举例                                  |
 | -------------------------- | --------------------------------- | ------------------------------------- |
-| 👇未来计划支持              |                                   |                                       |
 | Windows 风格（反斜杠转义） | Windows Style (Backslash Escaped) | `C:\\Windows\\System32`               |
 | Unix 风格（反斜杠转义）    | Unix Style (Backslash Escaped)    | `\/usr\/bin`                          |
 | Windows Git Bash 风格      | Windows Git Bash Style            | `/c/Windows/System32`                 |
-| 👇未来可能支持              |                                   |                                       |
-| 浏览器 `file://` 协议风格  |                                   | `file:///C:/Program%20Files%20(x86)/` |
+| 浏览器 `file://` 协议风格  | Browser `file://` protocol        | `file:///C:/Program%20Files%20(x86)/` |
 
-## 小提示 Tips
+## 小提示
 
-#### 关于文本选区... About text selections...
+#### 关于文本选区
 
-- 可以先按住 `Alt` 键不放，再鼠标先后选中多个选区
-  You can first hold down `Alt`, and then use the mouse to select multiple selection
-- 可以先按住 `Shift + Alt` 键不放，再按下鼠标左键，使用鼠标滑过需要选中的区块
-  You can first hold down `Shift + Alt`, then press the left mouse button, and use the mouse to slide over the block that needs to be selected
-- 可以通过 `Ctrl + D` 快捷键选中光标所在的单词
-  You can press `Ctrl + D` to select the word near the cursor
+- 可以先按住 `Alt` 键不放，再使用鼠标先后选中多个选区。
+- 可以先按住 `Shift + Alt` 键不放，再按下鼠标左键，使用鼠标滑过需要选中的区块。
+- 可以通过 `Ctrl + D` 快捷键选中光标所在的单词。
 
-## 反馈 Feedback
+## 反馈
 
-如果您觉得本插件还不够好用，有更好的使用建议；或者发现了 BUG，欢迎[前往 GitHub 仓库提 issue](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). 使用简体中文、繁體中文或 English 均可，不建议使用翻译软件翻译，否则可能会让文字描述变得抽象难懂。<br>
-If you feel that this extension is not good to use, or you have a better use suggestion, or found a BUG, welcome to [create an issue on GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). English, 简体中文 or 繁體中文 are all supported, it is not recommended to use translation software, otherwise it may make the text description become abstract and difficult to understand.
+如果您觉得本插件还不够好用，有更好的使用建议，或者发现了 BUG，欢迎[前往 GitHub 仓库提 issue](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues)。使用简体中文、繁體中文或 English 均可；不建议使用翻译软件，否则可能会让文字描述变得抽象难懂。
 
-## 开源共建 OpenSource & Contribute
+## 开源共建
 
-本插件已开源(MIT License)，欢迎提 Pr 共建，让插件变得更好用！<br>
-This plug-in has been open source (MIT License), welcome to Pr co-construction, let the plug-in become better!
+本插件已开源（MIT License），欢迎提 PR 共建，让插件变得更好用！
 
-GitHub Repo (开源地址): https://github.com/zhang-brook/variable-conversion-vscode-extension.git
+GitHub Repo（开源地址）：https://github.com/zhang-brook/variable-conversion-vscode-extension.git
 
-Gitee Mirror (码云镜像): https://gitee.com/zhang-brook/variable-conversion-vscode-extension.git
+Gitee Mirror（码云镜像）：https://gitee.com/zhang-brook/variable-conversion-vscode-extension.git
 
 -----
 
 **玩得开心！**
-
-**Enjoy!**

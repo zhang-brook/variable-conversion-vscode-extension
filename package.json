@@ -607,8 +607,10 @@
     "vscode:prepublish": "pnpm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "pnpm run compile && pnpm run lint",
+    "pretest": "pnpm run compile && pnpm run lint && pnpm run check:i18n",
     "lint": "eslint src",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "l10n:export": "vscode-l10n-dev export --outDir ./l10n ./src",
     "test": "vscode-test",
     "package": "npx @vscode/vsce package",
     "publish": "npx @vscode/vsce publish & npx ovsx publish"
@@ -617,11 +619,12 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "24.x",
     "@types/vscode": "^1.100.0",
-    "typescript-eslint": "^8.61.1",
+    "@vscode/l10n-dev": "^0.0.35",
     "@vscode/test-cli": "^0.0.15",
     "@vscode/test-electron": "^3.0.0",
     "eslint": "^10.5.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
   },
   "overrides": {
     "diff": "^8.0.4",

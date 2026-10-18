@@ -13,6 +13,7 @@ vsc-extension-quickstart.md
 
 # 打包时排除的目录
 docs/**
+scripts/**
 package-comment.jsonc
 test-code.md
 out/test/**

@@ -1,4 +1,4 @@
-**English** | [简体中文](README.md)
+**English** | [简体中文](README.zh-CN.md)
 
 <p align="center">
   <img src="image/logo.png" width="128" alt="Variable Conversion logo">

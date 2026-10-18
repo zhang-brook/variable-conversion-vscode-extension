@@ -4,7 +4,7 @@
   "description": "一个强大的变量名转换插件，支持多种使用方式，支持大/小驼峰、下划线、连字符、空格/点分隔、大/小写等常用命名方式转换。 A powerful variable naming conversion extension. You can use it in many ways. Support camel, pascal, snake, kebab(spinal), space, dot, lower, upper case, and more.",
   "version": "2.3.2",
   "icon": "image/logo.png",
-  "publisher": "coder-xiaomo",
+  "publisher": "zhang-brook",
   "engines": {
     "vscode": "^1.100.0"
   },
@@ -13,23 +13,23 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/coder-xiaomo/variable-conversion-vscode-extension.git"
+    "url": "https://github.com/zhang-brook/variable-conversion-vscode-extension.git"
   },
   "repositories": [
     {
       "type": "git",
-      "url": "https://git.only4.work/coder-xiaomo/variable-conversion-vscode-extension.git"
+      "url": "https://git.only4.work/zhang-brook/variable-conversion-vscode-extension.git"
     },
     {
       "type": "git",
-      "url": "https://gitee.com/coder-xiaomo/variable-conversion-vscode-extension.git"
+      "url": "https://gitee.com/zhang-brook/variable-conversion-vscode-extension.git"
     }
   ],
-  "main": "./out/extension.js",
   "activationEvents": [
     "onStartupFinished",
     "onTextSelected"
   ],
+  "main": "./out/extension.js",
   "contributes": {
     "keybindings": [
       {
@@ -616,10 +616,14 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "24.x",
     "@types/vscode": "^1.100.0",
-    "typescript-eslint": "^8.56.1",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2",
-    "eslint": "^9.39.3",
-    "typescript": "^5.9.3"
+    "typescript-eslint": "^8.61.1",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
   }
 }

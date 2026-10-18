@@ -9,9 +9,8 @@
   "version": "2.3.2",
   // logo
   "icon": "image/logo.png",
-  "publisher": "coder-xiaomo",
+  "publisher": "zhang-brook",
   "engines": {
-    // ↓ 实际应是 ^1.110.0
     "vscode": "^1.100.0"
   },
   "categories": [
@@ -20,25 +19,25 @@
   // 仓库地址
   "repository": {
     "type": "git",
-    "url": "https://github.com/coder-xiaomo/variable-conversion-vscode-extension.git"
+    "url": "https://github.com/zhang-brook/variable-conversion-vscode-extension.git"
   },
   "repositories": [
     {
       "type": "git",
-      "url": "https://git.only4.work/coder-xiaomo/variable-conversion-vscode-extension.git"
+      "url": "https://git.only4.work/zhang-brook/variable-conversion-vscode-extension.git"
     },
     {
       "type": "git",
-      "url": "https://gitee.com/coder-xiaomo/variable-conversion-vscode-extension.git"
+      "url": "https://gitee.com/zhang-brook/variable-conversion-vscode-extension.git"
     }
   ],
-  "main": "./out/extension.js",
   "activationEvents": [
     // 当编辑器完成启动时激活
     "onStartupFinished",
     // 当用户选中文本时激活
     "onTextSelected"
   ],
+  "main": "./out/extension.js",
   "contributes": {
     // docs: https://code.visualstudio.com/docs/getstarted/keybindings#_accepted-keys
     "keybindings": [
@@ -936,13 +935,16 @@
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
-    "@types/node": "22.x",
-    // ↓ 实际应是 ^1.110.0
+    "@types/node": "24.x",
     "@types/vscode": "^1.100.0",
-    "typescript-eslint": "^8.56.1",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2",
-    "eslint": "^9.39.3",
-    "typescript": "^5.9.3"
+    "typescript-eslint": "^8.61.1",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
   }
 }

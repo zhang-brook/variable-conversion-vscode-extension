@@ -5,6 +5,7 @@
 一个强大的变量命名及路径风格转换插件，支持一键转换、循环转换，支持右键菜单、快捷键、状态栏等多种方式使用。<br>
 A powerful variable and path conversion extension. Supports one-key conversion & cyclic conversion. You can use it through the editor menu, shortcut keys and status bar.
 
+<!--
 > **【近期更新】**
 >
 > **v2.2.0 (2025-12-05)**
@@ -12,7 +13,6 @@ A powerful variable and path conversion extension. Supports one-key conversion &
 > - 支持配置目标转换格式顺序
 > - 支持展示当前配置的格式顺序信息弹窗，可显示配置重复项和无效项
 > - 支持从弹窗中点击按钮快捷跳转至设置页对应配置项
-<!--
 >
 > **v2.1.0 (2025-07-14)**
 >

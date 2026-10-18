@@ -73,8 +73,6 @@
   "enum.variableCase.dot_upper_case": "点大写命名 (dot_upper_case)",
   "enum.variableCase.lower_case": "全小写命名 (lower_case)",
   "enum.variableCase.upper_case": "全大写命名 (upper_case)",
-  "configuration.disableFormat.markdownDescription": "定义哪些变量命名方式是禁用的。\n\n您也可以直接在 `settings.json` 中编辑：\n\n`\"variable-conversion.disableFormat\": [ ... ],`\n\n[在 settings.json 中编辑](command:workbench.action.openSettingsJson)\n\n配置后，您可能需要*重启扩展宿主*或*重启当前窗口*才能完全生效：\n\n[重启扩展宿主](command:workbench.action.restartExtensionHost)、[重启当前窗口](command:workbench.action.reloadWindow)",
-  "configuration.disableFormat.markdownDeprecationMessage": "**已弃用**，请使用 `#variable-conversion.enabledFormats#`。",
   "configuration.disablePathFormat.markdownDescription": "定义哪些路径风格是禁用的。\n\n您也可以直接在 `settings.json` 中编辑：\n\n`\"variable-conversion.disablePathFormat\": [ ... ],`\n\n[在 settings.json 中编辑](command:workbench.action.openSettingsJson)\n\n配置后，您可能需要*重启扩展宿主*或*重启当前窗口*才能完全生效：\n\n[重启扩展宿主](command:workbench.action.restartExtensionHost)、[重启当前窗口](command:workbench.action.reloadWindow)",
   "enum.pathFormat.windows_style": "Windows 风格",
   "enum.pathFormat.unix_style": "Unix 风格"

@@ -73,8 +73,6 @@
   "enum.variableCase.dot_upper_case": "Dot upper case",
   "enum.variableCase.lower_case": "Lower case",
   "enum.variableCase.upper_case": "Upper case",
-  "configuration.disableFormat.markdownDescription": "Define which variable naming conventions are disabled.\n\nYou can also edit this setting in `settings.json`:\n\n`\"variable-conversion.disableFormat\": [ ... ],`\n\n[Edit in settings.json](command:workbench.action.openSettingsJson)\n\nYou may need to *restart the extension host* or *reload the window* for the configuration to take full effect:\n\n[Restart Extension Host](command:workbench.action.restartExtensionHost), [Reload Window](command:workbench.action.reloadWindow)",
-  "configuration.disableFormat.markdownDeprecationMessage": "**Deprecated**: Use `#variable-conversion.enabledFormats#` instead.",
   "configuration.disablePathFormat.markdownDescription": "Define which path formats are disabled.\n\nYou can also edit this setting in `settings.json`:\n\n`\"variable-conversion.disablePathFormat\": [ ... ],`\n\n[Edit in settings.json](command:workbench.action.openSettingsJson)\n\nYou may need to *restart the extension host* or *reload the window* for the configuration to take full effect:\n\n[Restart Extension Host](command:workbench.action.restartExtensionHost), [Reload Window](command:workbench.action.reloadWindow)",
   "enum.pathFormat.windows_style": "Windows style",
   "enum.pathFormat.unix_style": "Unix style"

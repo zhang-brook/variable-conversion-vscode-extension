@@ -538,15 +538,6 @@
         //   },
         //   "description": "Define which formats are enabled.\n定义哪些格式是开启的"
         // },
-        // "variable-conversion.disableFormat2": {
-        //   "type": "object",
-        //   "default": {
-        //     "camelCase": true,
-        //     "snake_case": true,
-        //     "PascalCase": true
-        //   },
-        //   "description": "Define which formats are enabled.\n定义哪些格式是开启的"
-        // },
         //
         // 配置项灵感来自: go.addTags 配置项
         // link: https://github.com/golang/vscode-go/blob/8dccbfd59467c7ef09cb9e34309dd466018c5e98/extension/package.json#L1588-L1634
@@ -818,85 +809,6 @@
             //   "点大写命名 (dot_upper_case)",
             //   "全小写命名 (lower_case)",
             //   "全大写命名 (upper_case)"
-            // ]
-            "enumDescriptions": [
-              "%enum.variableCase.camel_case%",
-              "%enum.variableCase.pascal_case%",
-              "%enum.variableCase.snake_case%",
-              "%enum.variableCase.snake_camel_case%",
-              "%enum.variableCase.snake_pascal_case%",
-              "%enum.variableCase.snake_upper_case%",
-              "%enum.variableCase.kebab_case%",
-              "%enum.variableCase.kebab_camel_case%",
-              "%enum.variableCase.kebab_pascal_case%",
-              "%enum.variableCase.kebab_upper_case%",
-              "%enum.variableCase.space_case%",
-              "%enum.variableCase.space_camel_case%",
-              "%enum.variableCase.space_pascal_case%",
-              "%enum.variableCase.space_upper_case%",
-              "%enum.variableCase.dot_case%",
-              "%enum.variableCase.dot_camel_case%",
-              "%enum.variableCase.dot_pascal_case%",
-              "%enum.variableCase.dot_upper_case%",
-              "%enum.variableCase.lower_case%",
-              "%enum.variableCase.upper_case%"
-            ]
-          },
-          "default": []
-        },
-        "variable-conversion.disableFormat": {
-          "order": 1,
-          // markdownDescription 最多配置 11 行
-          // "markdownDescription": "定义哪些变量命名方式是禁用的\n\nDefine which variable formats are disabled.\n\n若您感觉以下配置比较麻烦，也可以选择在 `settings.json` 中编辑：\n\nIf you find the following configuration troublesome, you can also edit this configuration item in `settings.json`:\n\n`\"variable-conversion.disableFormat\": [ ... ],`\n\n[在 settings.json 中编辑 (Edit in settings.json)](command:workbench.action.openSettingsJson)\n\n配置后，您可能需要*重启扩展宿主*，或*重启当前窗口*才可使该配置完全生效（二选一即可）:\n\nYou may need to *restart extension host* or *reload window* after configuration to take full effect (either):\n\n[重启扩展宿主 (Restart Extension Host)](command:workbench.action.restartExtensionHost), [重启当前窗口 (Reload Window)](command:workbench.action.reloadWindow)",
-          "markdownDescription": "%configuration.disableFormat.markdownDescription%",
-          // "markdownDeprecationMessage": "**Deprecated**: Please use `#variable-conversion.enabledFormats#` instead.\n\n**已弃用**，请使用 `#variable-conversion.enabledFormats#`。",
-          "markdownDeprecationMessage": "%configuration.disableFormat.markdownDeprecationMessage%",
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "camel_case",
-              "pascal_case",
-              "snake_case",
-              "snake_camel_case",
-              "snake_pascal_case",
-              "snake_upper_case",
-              "kebab_case",
-              "kebab_camel_case",
-              "kebab_pascal_case",
-              "kebab_upper_case",
-              "space_case",
-              "space_camel_case",
-              "space_pascal_case",
-              "space_upper_case",
-              "dot_case",
-              "dot_camel_case",
-              "dot_pascal_case",
-              "dot_upper_case",
-              "lower_case",
-              "upper_case"
-            ],
-            // "enumDescriptions": [
-            //   "小驼峰(驼峰)命名",
-            //   "大驼峰(帕斯卡)命名",
-            //   "下划线(蛇形)命名",
-            //   "下划线(蛇形) + 小驼峰(驼峰)命名",
-            //   "下划线(蛇形) + 大驼峰(帕斯卡)命名",
-            //   "下划线(蛇形) + 全大写命名",
-            //   "中划线(连字符/脊柱式)命名",
-            //   "中划线(连字符/脊柱式) + 小驼峰(驼峰)命名",
-            //   "中划线(连字符/脊柱式) + 大驼峰(帕斯卡)命名",
-            //   "中划线(连字符/脊柱式) + 全大写命名",
-            //   "空格分隔命名",
-            //   "空格分隔 + 小驼峰(驼峰)命名",
-            //   "空格分隔 + 大驼峰(帕斯卡)命名",
-            //   "空格分隔 + 全大写命名",
-            //   "点分隔命名",
-            //   "点分隔 + 小驼峰(驼峰)命名",
-            //   "点分隔 + 大驼峰(帕斯卡)命名",
-            //   "点分隔 + 全大写命名",
-            //   "全小写",
-            //   "全大写"
             // ]
             "enumDescriptions": [
               "%enum.variableCase.camel_case%",

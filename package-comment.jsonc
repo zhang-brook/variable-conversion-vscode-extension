@@ -6,7 +6,7 @@
   "description": "%extension.description%",
   // "description": "一个强大的变量名转换插件，支持多种使用方式，支持大/小驼峰、下划线、连字符、空格/点分隔、大/小写等常用命名方式转换。 A powerful variable naming conversion extension. You can use it in many ways. Support camel, pascal, snake, kebab(spinal), space, dot, lower, upper case, and more.",
   // 版本号
-  "version": "2.3.4",
+  "version": "2.4.0",
   // logo
   // 2026-.10.18 更新：VSCode Marketplace 要求不超过 1024x1024
   "icon": "image/logo@1024.png",

@@ -25,6 +25,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -->
 
+## 2.4.0
+
+### Added
+
+- Add English and Simplified Chinese localization for the extension manifest, Quick Pick menus, status bar, editor messages and configuration dialog. (新增英文与简体中文界面本地化，覆盖扩展清单、快速选择菜单、状态栏、编辑器提示与配置详情弹窗)
+
+### Changed
+
+- Search keywords in the Quick Pick now follow the VS Code display language. (快速选择中的搜索关键词现在跟随 VS Code 显示语言)
+
+### Internal
+
+- Add scripts to export and validate localization strings. (新增国际化文案抽取与一致性校验脚本)
+
 ## 2.3.3
 
 This release does not include functional changes (本次变更不包含功能性改动)

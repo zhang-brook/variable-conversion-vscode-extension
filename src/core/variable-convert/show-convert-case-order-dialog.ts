@@ -1,6 +1,11 @@
 import * as vscode from 'vscode';
 import { cyclicConvertCaseOrder, quickPickSupportCases, commands } from './types/SupportVariableCaseType';
 import { getUserConfigurations } from '../../utils/user-configuration';
+import { getVariableCaseDisplayName } from '../../i18n/display-names';
+
+interface ConfigDialogActionItem extends vscode.MessageItem {
+    action: 'openAllSettings' | 'openEnabledFormats' | 'openFormatOrder';
+}
 
 /**
  * 显示当前配置的格式顺序信息
@@ -10,12 +15,6 @@ export function showConvertCaseDetailDialog() {
     const formatOrder = getUserConfigurations<string[]>('formatOrder') || [];
     // 获取启用的格式
     const enabledFormats = getUserConfigurations<Record<string, boolean>>('enabledFormats') || {};
-
-    // 创建格式名称映射
-    const formatNameMap: Record<string, string> = {};
-    quickPickSupportCases.forEach(item => {
-        formatNameMap[item.settingsKey] = item.name;
-    });
 
     // 获取所有有效的settingsKey
     const validSettingsKeys = new Set(quickPickSupportCases.map(item => item.settingsKey));
@@ -43,12 +42,13 @@ export function showConvertCaseDetailDialog() {
 
     // 构建显示内容
     const message = [
-        '当前配置的变量命名格式顺序：\n\n',
+        vscode.l10n.t('Current variable naming convention order:'),
+        '',
     ];
 
     // 先显示用户配置的顺序
     if (formatOrder.length > 0) {
-        message.push('用户自定义顺序：\n');
+        message.push(vscode.l10n.t('Custom order:'));
         formatOrder.forEach((format, index) => {
             const enableKey = settingsKeyToEnableKeyMap[format];
             const isEnabled = enableKey ? enabledFormats[enableKey] !== false : true;
@@ -57,15 +57,15 @@ export function showConvertCaseDetailDialog() {
             // 添加重复和无效标记
             let marker = '';
             if (!validSettingsKeys.has(format)) {
-                marker = ' ❌ (无效格式)';
+                marker = ` ❌ ${vscode.l10n.t('(Invalid format)')}`;
             } else if (duplicateSettingsKeys.has(format)) {
-                marker = ' ⚠️ (重复配置)';
+                marker = ` ⚠️ ${vscode.l10n.t('(Duplicate entry)')}`;
             }
 
-            message.push(`${index + 1}. ${formatNameMap[format] || format} (${format}) ${marker || status}\n`);
+            message.push(`${index + 1}. ${getVariableCaseDisplayName(format).name} (${format}) ${marker || status}`);
         });
     } else {
-        message.push('未设置自定义顺序，使用默认顺序\n\n');
+        message.push(vscode.l10n.t('No custom order configured. Using the default order.'), '');
     }
 
     // 显示未配置但已启用的格式
@@ -78,9 +78,9 @@ export function showConvertCaseDetailDialog() {
         .map(item => item.settingsKey);
 
     if (unconfiguredEnabledFormats.length > 0) {
-        message.push('\n未配置但已启用的格式（默认顺序）：\n');
+        message.push('', vscode.l10n.t('Enabled formats not in the custom order (default order):'));
         unconfiguredEnabledFormats.forEach((format, index) => {
-            message.push(`${formatOrder.length + index + 1}. ${formatNameMap[format] || format} (${format}) ✔️\n`);
+            message.push(`${formatOrder.length + index + 1}. ${getVariableCaseDisplayName(format).name} (${format}) ✔️`);
         });
     }
 
@@ -93,49 +93,57 @@ export function showConvertCaseDetailDialog() {
         .map(item => item.settingsKey);
 
     if (disabledFormats.length > 0) {
-        message.push('\n未启用的格式：\n');
+        message.push('', vscode.l10n.t('Disabled formats:'));
         disabledFormats.forEach(format => {
-            message.push(`- ${formatNameMap[format] || format} (${format}) ❌\n`);
+            message.push(`- ${getVariableCaseDisplayName(format).name} (${format}) ❌`);
         });
     }
 
     // 警告信息
     if (duplicateSettingsKeys.size > 0 || invalidSettingsKeys.size > 0) {
-        message.push('\n');
+        message.push('');
         if (duplicateSettingsKeys.size > 0) {
-            message.push(`⚠️ 警告：发现重复配置的格式：${Array.from(duplicateSettingsKeys).join(', ')}\n`);
+            message.push(vscode.l10n.t('⚠️ Warning: duplicate formats: {0}', Array.from(duplicateSettingsKeys).join(', ')));
         }
 
         if (invalidSettingsKeys.size > 0) {
-            message.push(`❌ 错误：发现无效格式：${Array.from(invalidSettingsKeys).join(', ')}\n`);
+            message.push(vscode.l10n.t('❌ Error: invalid formats: {0}', Array.from(invalidSettingsKeys).join(', ')));
         }
     }
 
     message.push(
-        '\n',
-        '提示：\n',
-        '- 未启用的格式即使在顺序中配置也不会显示在转换选项中\n',
-        '- 重复和无效的格式配置可能会导致显示异常\n',
+        '',
+        vscode.l10n.t('Notes:'),
+        vscode.l10n.t('- Disabled formats are not shown in conversion options even if they appear in the order.'),
+        vscode.l10n.t('- Duplicate or invalid entries may cause display issues.'),
     );
 
+    const actionItems: ConfigDialogActionItem[] = [
+        { title: vscode.l10n.t('All Extension Settings'), action: 'openAllSettings' },
+        { title: vscode.l10n.t('Configure Enabled Formats'), action: 'openEnabledFormats' },
+        { title: vscode.l10n.t('Configure Format Order'), action: 'openFormatOrder' },
+    ];
+
     // 显示信息弹窗
-    vscode.window.showInformationMessage<vscode.MessageItem>(
-        '变量转换功能配置信息',
-        { modal: true, detail: message.join('') },
-        // 弹窗按钮
-        { title: '插件全部配置' },
-        { title: '配置启用的命名方式' },
-        { title: '配置转换顺序' },
+    vscode.window.showInformationMessage<ConfigDialogActionItem>(
+        vscode.l10n.t('Variable Conversion Configuration'),
+        { modal: true, detail: message.join('\n') },
+        ...actionItems,
     ).then(selection => {
-        if (selection) {
-            // 跳转到设置项
-            if (selection.title === '插件全部配置') {
+        if (!selection) {
+            return;
+        }
+        // 跳转到设置项
+        switch (selection.action) {
+            case 'openAllSettings':
                 vscode.commands.executeCommand('workbench.action.openSettings', 'variable-conversion');
-            } else if (selection.title === '配置启用的命名方式') {
+                break;
+            case 'openEnabledFormats':
                 vscode.commands.executeCommand('workbench.action.openSettings', 'variable-conversion.enabledFormats');
-            } else if (selection.title === '配置转换顺序') {
+                break;
+            case 'openFormatOrder':
                 vscode.commands.executeCommand('workbench.action.openSettings', 'variable-conversion.formatOrder');
-            }
+                break;
         }
     });
 }

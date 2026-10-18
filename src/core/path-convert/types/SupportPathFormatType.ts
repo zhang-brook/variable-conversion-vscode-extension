@@ -56,8 +56,6 @@ export const commands: Array<{ command: string; targetCase: SupportPathFormat; s
  */
 export interface QuickPickSupportCaseItem {
     type: SupportPathFormat,
-    name: string,
-    shortName: string,
     keyword: string[],
     settingsKey: string,
 }
@@ -69,15 +67,11 @@ export interface QuickPickSupportCaseItem {
 export const quickPickSupportCases: Array<QuickPickSupportCaseItem> = [
     {
         type: SupportPathFormat.Windows,
-        name: 'Microsoft Windows 风格',
-        shortName: 'Windows 风格',
         keyword: keyword.windows,
         settingsKey: 'windows_style',
     },
     {
         type: SupportPathFormat.Unix,
-        name: 'Unix / 类 Unix 风格 (Linux, macOS, ...)',
-        shortName: 'Unix 风格',
         keyword: keyword.unix,
         settingsKey: 'unix_style',
     },

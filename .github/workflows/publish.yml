@@ -11,6 +11,18 @@ on:
         description: Tag to publish (e.g. 2.3.3)
         required: true
         type: string
+      marketplace:
+        description: Publish to Visual Studio Marketplace
+        type: boolean
+        default: true
+      openvsx:
+        description: Publish to Open VSX Registry
+        type: boolean
+        default: false
+      artifact:
+        description: Upload VSIX artifact
+        type: boolean
+        default: true
 
 concurrency:
   group: publish-${{ github.ref }}
@@ -56,13 +68,15 @@ jobs:
         run: pnpm dlx @vscode/vsce@4 package
 
       - name: Publish to Visual Studio Marketplace
+        if: github.event_name != 'workflow_dispatch' || inputs.marketplace
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
         run: pnpm dlx @vscode/vsce@4 publish --packagePath "variable-conversion-${VERSION}.vsix" -p "$VSCE_PAT" --skip-duplicate
 
       - name: Publish to Open VSX Registry
-        # 2026.10.18 temporarily disabled
+        # tag pushes stay disabled until the Open VSX publisher rename is resolved
         if: false
+        # if: github.event_name != 'workflow_dispatch' || inputs.openvsx
         env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
         run: pnpm dlx ovsx@1 publish "variable-conversion-${VERSION}.vsix" -p "$OVSX_PAT" --skip-duplicate
@@ -76,6 +90,7 @@ jobs:
           gh release upload "$TAG" "variable-conversion-${VERSION}.vsix" --clobber
 
       - name: Upload VSIX artifact
+        if: github.event_name != 'workflow_dispatch' || inputs.artifact
         uses: actions/upload-artifact@v7
         with:
           name: variable-conversion-${{ env.VERSION }}

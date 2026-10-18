@@ -142,7 +142,7 @@ This release does not include functional changes (本次变更不包含功能性
 
 ### Added
 
-- Add a status bar button to trigger string conversion (添加状态栏按钮，支持通过状态栏按钮触发变量转换)
+- Add a status bar button to trigger variable conversion (添加状态栏按钮，支持通过状态栏按钮触发变量转换)
 
 ## 1.0.5
 

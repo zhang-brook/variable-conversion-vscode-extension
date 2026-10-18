@@ -50,12 +50,12 @@ Select what you want to convert in the editor, and then press `Ctrl + Alt + [` o
 ![Step2. Press Shift + Alt + T](image/step2-press-shift-alt-t.gif)
 
 或者点击状态栏的 `变量转换` 按钮<br>
-Or click the `String Conversion` button in the status bar
+Or click the `Variable Conversion` button in the status bar
 
 ![Step2. Press Status Bar Button](image/step2-press-status-bar-button.png)
 
 或者右键 -> `变量转换`<br>
-Or right-click -> `String Conversion`
+Or right-click -> `Variable Conversion`
 
 ![Step2. Variable conversion on the context menu](image/step2-variable-conversion-on-context-menu.png)
 

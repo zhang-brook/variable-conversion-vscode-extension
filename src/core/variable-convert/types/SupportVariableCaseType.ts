@@ -220,64 +220,54 @@ export enum SupportVariableCase {
     UPPER_CASE,
 }
 
+export interface KeywordSet {
+    /** 中文界面展示的关键词，包含中文、拼音、英文名与缩写 */
+    zh: string[];
+    /** 英文界面展示的关键词 */
+    en: string[];
+}
+
 const keyword = {
-    camel: [
-        '小驼峰', '驼峰',
-        'Camel Case',
-        'cc',
-        'XiaoTuoFeng', 'TuoFeng',
-        'xtf', 'tf',
-    ],
-    pascal: [
-        '大驼峰', '帕斯卡',
-        'Pascal Case',
-        'pc',
-        'DaTuoFeng', 'PaSiKa',
-        'dtf', 'psk',
-    ],
-    snake: [
-        '下划线', '蛇形', '_',
-        'Snake Case', 'Underline Case',
-        'sc', 'uc',
-        'XiaHuaXian', 'SheXing',
-        'xhx', 'sx',
-    ],
-    kebab: [
-        '连字符', '脊柱式', '-',
-        'Kebab Case', 'Spinal Case',
-        'kc', 'sc',
-        'LianZiFu', 'JiZhuShi',
-        'lzf', 'jzs',
-    ],
-    space: [
-        '空格', // ' ',
-        'Space Case',
-        'sc',
-        'KongGe',
-        'kg',
-    ],
-    dot: [
-        '点', '.',
-        'Dot Case',
-        'dc',
-        'Dian',
-        'd',
-    ],
-    upper: [
-        '全大写', '大写',
-        'Upper Case',
-        'uc',
-        'QuanDaXie',
-        'qdx',
-    ],
-    lower: [
-        '全小写', '小写',
-        'Lower Case',
-        'lc',
-        'QuanXiaoXie',
-        'qxx',
-    ],
+    camel: {
+        zh: ['小驼峰', '驼峰', 'Camel Case', 'cc', 'XiaoTuoFeng', 'TuoFeng', 'xtf', 'tf'],
+        en: ['Camel Case', 'cc'],
+    },
+    pascal: {
+        zh: ['大驼峰', '帕斯卡', 'Pascal Case', 'pc', 'DaTuoFeng', 'PaSiKa', 'dtf', 'psk'],
+        en: ['Pascal Case', 'pc'],
+    },
+    snake: {
+        zh: ['下划线', '蛇形', '_', 'Snake Case', 'Underline Case', 'sc', 'uc', 'XiaHuaXian', 'SheXing', 'xhx', 'sx'],
+        en: ['Snake Case', 'Underline Case', '_', 'sc', 'uc'],
+    },
+    kebab: {
+        zh: ['连字符', '脊柱式', '-', 'Kebab Case', 'Spinal Case', 'kc', 'sc', 'LianZiFu', 'JiZhuShi', 'lzf', 'jzs'],
+        en: ['Kebab Case', 'Spinal Case', '-', 'kc'],
+    },
+    space: {
+        zh: ['空格', 'Space Case', 'sc', 'KongGe', 'kg'], // ' ',
+        en: ['Space Case', 'sc'],
+    },
+    dot: {
+        zh: ['点', '.', 'Dot Case', 'dc', 'Dian', 'd'],
+        en: ['Dot Case', '.', 'dc'],
+    },
+    upper: {
+        zh: ['全大写', '大写', 'Upper Case', 'uc', 'QuanDaXie', 'qdx'],
+        en: ['Upper Case', 'uc'],
+    },
+    lower: {
+        zh: ['全小写', '小写', 'Lower Case', 'lc', 'QuanXiaoXie', 'qxx'],
+        en: ['Lower Case', 'lc'],
+    },
 };
+
+function mergeKeywords(...sets: KeywordSet[]): KeywordSet {
+    return {
+        zh: Array.from(new Set(sets.flatMap(set => set.zh))),
+        en: Array.from(new Set(sets.flatMap(set => set.en))),
+    };
+}
 
 interface Command {
     command: string;
@@ -426,7 +416,7 @@ commands.forEach(command => {
 
 export interface QuickPickSupportCaseItem {
     type: SupportVariableCase,
-    keyword: string[],
+    keyword: KeywordSet,
     settingsKey: string,
 }
 
@@ -447,82 +437,82 @@ export const quickPickSupportCases: Array<QuickPickSupportCaseItem> = [
     },
     {
         type: SupportVariableCase.SNAKE_CASE,
-        keyword: [...keyword.snake, ...keyword.lower],
+        keyword: mergeKeywords(keyword.snake, keyword.lower),
         settingsKey: 'snake_case',
     },
     {
         type: SupportVariableCase.SNAKE_CAMEL_CASE,
-        keyword: [...keyword.snake, ...keyword.camel],
+        keyword: mergeKeywords(keyword.snake, keyword.camel),
         settingsKey: 'snake_camel_case',
     },
     {
         type: SupportVariableCase.SNAKE_PASCAL_CASE,
-        keyword: [...keyword.snake, ...keyword.pascal],
+        keyword: mergeKeywords(keyword.snake, keyword.pascal),
         settingsKey: 'snake_pascal_case',
     },
     {
         type: SupportVariableCase.SNAKE_UPPER_CASE,
-        keyword: [...keyword.snake, ...keyword.upper],
+        keyword: mergeKeywords(keyword.snake, keyword.upper),
         settingsKey: 'snake_upper_case',
     },
     {
         type: SupportVariableCase.KEBAB_CASE,
-        keyword: [...keyword.kebab, ...keyword.lower],
+        keyword: mergeKeywords(keyword.kebab, keyword.lower),
         settingsKey: 'kebab_case',
     },
     {
         type: SupportVariableCase.KEBAB_CAMEL_CASE,
-        keyword: [...keyword.kebab, ...keyword.camel],
+        keyword: mergeKeywords(keyword.kebab, keyword.camel),
         settingsKey: 'kebab_camel_case',
     },
     {
         type: SupportVariableCase.KEBAB_PASCAL_CASE,
-        keyword: [...keyword.kebab, ...keyword.pascal],
+        keyword: mergeKeywords(keyword.kebab, keyword.pascal),
         settingsKey: 'kebab_pascal_case',
     },
     {
         type: SupportVariableCase.KEBAB_UPPER_CASE,
-        keyword: [...keyword.kebab, ...keyword.upper],
+        keyword: mergeKeywords(keyword.kebab, keyword.upper),
         settingsKey: 'kebab_upper_case',
     },
     {
         type: SupportVariableCase.SPACE_CASE,
-        keyword: [...keyword.space, ...keyword.lower],
+        keyword: mergeKeywords(keyword.space, keyword.lower),
         settingsKey: 'space_case',
     },
     {
         type: SupportVariableCase.SPACE_CAMEL_CASE,
-        keyword: [...keyword.space, ...keyword.camel],
+        keyword: mergeKeywords(keyword.space, keyword.camel),
         settingsKey: 'space_camel_case',
     },
     {
         type: SupportVariableCase.SPACE_PASCAL_CASE,
-        keyword: [...keyword.space, ...keyword.pascal],
+        keyword: mergeKeywords(keyword.space, keyword.pascal),
         settingsKey: 'space_pascal_case',
     },
     {
         type: SupportVariableCase.SPACE_UPPER_CASE,
-        keyword: [...keyword.space, ...keyword.upper],
+        keyword: mergeKeywords(keyword.space, keyword.upper),
         settingsKey: 'space_upper_case',
     },
     {
         type: SupportVariableCase.DOT_CASE,
-        keyword: [...keyword.dot, ...keyword.lower],
+        keyword: mergeKeywords(keyword.dot, keyword.lower),
         settingsKey: 'dot_case',
     },
     {
         type: SupportVariableCase.DOT_CAMEL_CASE,
-        keyword: [...keyword.dot, ...keyword.camel],
+        keyword: mergeKeywords(keyword.dot, keyword.camel),
         settingsKey: 'dot_camel_case',
     },
     {
         type: SupportVariableCase.DOT_PASCAL_CASE,
-        keyword: [...keyword.dot, ...keyword.pascal],
+        keyword: mergeKeywords(keyword.dot, keyword.pascal),
         settingsKey: 'dot_pascal_case',
     },
     {
         type: SupportVariableCase.DOT_UPPER_CASE,
-        keyword: [...keyword.dot, ...keyword.upper],
+        keyword: mergeKeywords(keyword.dot, keyword.upper),
         settingsKey: 'dot_upper_case',
     },
     {

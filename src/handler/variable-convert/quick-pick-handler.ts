@@ -28,10 +28,12 @@ interface RecommendItem {
 function generateOptionsBasedOnText(textList: string[], eol: EOL, enabledQuickPickSupportCases: Array<QuickPickSupportCaseItem>): Array<QuickPickItemEx> {
     // Cut text 切割文本
     const resultsList: Array<TransformTextResult[]> = transformMultiSelectionText(textList);
+    const useChineseKeywords = vscode.env.language.toLowerCase() === 'zh-cn';
 
     const mergeResultList: Array<RecommendItem> = [];
     for (const quickPick of enabledQuickPickSupportCases) {
         const shortName = getVariableCaseDisplayName(quickPick.settingsKey).shortName;
+        const keywords = useChineseKeywords ? quickPick.keyword.zh : quickPick.keyword.en;
         const conversionResults: Array<string> = [];
         for (let i = 0; i < textList.length; i++) {
             const text = textList[i];
@@ -45,14 +47,14 @@ function generateOptionsBasedOnText(textList: string[], eol: EOL, enabledQuickPi
             let item: RecommendItem = {
                 conversionText: conversionResults,
                 transformTo: [shortName],
-                keyword: quickPick.keyword,
+                keyword: keywords,
             };
             mergeResultList.push(item);
             continue;
         }
 
         recommendItem.transformTo.push(shortName);
-        recommendItem.keyword = Array.from(new Set(recommendItem.keyword.concat(quickPick.keyword))); // 关键词去重
+        recommendItem.keyword = Array.from(new Set(recommendItem.keyword.concat(keywords))); // 关键词去重
     }
 
     // 根据文本生成选项的逻辑

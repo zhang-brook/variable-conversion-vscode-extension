@@ -16,6 +16,7 @@ docs/**
 scripts/**
 package-comment.jsonc
 test-code.md
+pnpm-lock.yaml
 out/test/**
 
 # README.md 在打包时, 内部图片引用地址会变更为 GitHub 仓库 raw 地址, 此处无需打包进 .vsix 包中

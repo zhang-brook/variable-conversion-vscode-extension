@@ -25,6 +25,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -->
 
+## 3.0.0
+
+### Added
+
+- Add 13 more display languages: Czech, German, Spanish, French, Hungarian, Italian, Japanese, Korean, Polish, Portuguese (Brazil), Russian, Turkish and Traditional Chinese. The extension now ships 15 localized languages. (新增 13 种界面语言：捷克语、德语、西班牙语、法语、匈牙利语、意大利语、日语、韩语、波兰语、葡萄牙语（巴西）、俄语、土耳其语和繁体中文；扩展现支持 15 种本地化语言)
+- Add localized README files for all supported languages. (为所有支持的语言新增对应的 README)
+
+### Changed
+
+- **[BREAKING!!!]** Remove `variable-conversion.disablePathFormat`, use the `variable-conversion.enabledPathFormats` enable switches instead. (移除 `variable-conversion.disablePathFormat` 配置项，请改用 `variable-conversion.enabledPathFormats` 启用开关)
+- **[BREAKING!!!]** Remove deprecated `variable-conversion.disableFormat`, use `variable-conversion.enabledFormats` instead. (移除已弃用的 `variable-conversion.disableFormat` 配置项，请使用 `variable-conversion.enabledFormats`)
+
 ## 2.4.0
 
 ### Added

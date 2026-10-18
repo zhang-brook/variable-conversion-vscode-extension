@@ -346,7 +346,6 @@
       "properties": {
         "variable-conversion.enabledFormats": {
           "type": "object",
-          "description": "Tags and options configured here will be used by the Add Tags command to add tags to struct fields. If promptForTags is true, then user will be prompted for tags and options. By default, json tags are added.",
           "markdownDescription": "配置启用的变量命名方式\n\nConfiguration of Enabled Variable Naming Conventions.\n\n[配置转换顺序](command:workbench.action.openSettings?%5B%22variable-conversion.formatOrder%22%5D)&nbsp;&nbsp;&nbsp;&nbsp;[查看当前配置(对话框)](command:variable-conversion.showConvertCaseDetailDialog)&nbsp;&nbsp;&nbsp;&nbsp;[在 settings.json 中编辑 (Edit in settings.json)](command:workbench.action.openSettingsJson)\n\n&nbsp;\n\n🌰 e.g. *Mike like eat ice-cream*\n\n对于这个句子，不同命名方式示例如下：\n\nFor this sentence, different naming conventions are as follows:",
           "scope": "window",
           "properties": {

@@ -24,4 +24,6 @@
 		"Gitee",
 		"unconfigured"
 	],
+	// lokalise.i18n-ally
+	"i18n-ally.disabled": true,
 }

@@ -65,7 +65,7 @@ jobs:
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
 
       - name: Package extension
-        run: pnpm dlx @vscode/vsce@4 package
+        run: pnpm dlx @vscode/vsce@4 package --changelog-path CHANGELOG.md
 
       - name: Publish to Visual Studio Marketplace
         if: github.event_name != 'workflow_dispatch' || inputs.marketplace
@@ -86,7 +86,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
         run: |
-          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --title "$TAG" --generate-notes --verify-tag
+          # Release notes come from this version's CHANGELOG section; fall back to generated notes when absent.
+          if pnpm run changelog "$VERSION" --out release-notes.md; then
+            NOTES="--notes-file release-notes.md"
+          else
+            echo "::notice::CHANGELOG.md has no section for $VERSION, falling back to generated notes."
+            NOTES="--generate-notes"
+          fi
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --title "$TAG" $NOTES --verify-tag
           gh release upload "$TAG" "variable-conversion-${VERSION}.vsix" --clobber
 
       - name: Upload VSIX artifact

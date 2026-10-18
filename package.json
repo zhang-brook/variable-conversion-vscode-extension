@@ -561,6 +561,7 @@
     "pretest": "pnpm run compile && pnpm run lint && pnpm run check:i18n",
     "lint": "eslint src",
     "check:i18n": "node scripts/check-i18n.mjs",
+    "changelog": "node scripts/changelog.mjs",
     "l10n:export": "vscode-l10n-dev export --outDir ./l10n ./src",
     "test": "vscode-test",
     "package": "npx @vscode/vsce package",

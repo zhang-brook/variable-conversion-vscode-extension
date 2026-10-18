@@ -25,17 +25,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -->
 
+## [Unreleased]
+
+### Internal
+
+- Replace the two source logos with a single compressed 1024x1024 icon, cutting the packaged image size from 128KB to 13KB.
+- Allow selecting the marketplace publish targets when running the publish workflow manually.
+- Bump GitHub Actions to their latest major versions.
+
 ## 3.0.0
 
 ### Added
 
-- Add 13 more display languages: Czech, German, Spanish, French, Hungarian, Italian, Japanese, Korean, Polish, Portuguese (Brazil), Russian, Turkish and Traditional Chinese. The extension now ships 15 localized languages. (新增 13 种界面语言：捷克语、德语、西班牙语、法语、匈牙利语、意大利语、日语、韩语、波兰语、葡萄牙语（巴西）、俄语、土耳其语和繁体中文；扩展现支持 15 种本地化语言)
-- Add localized README files for all supported languages. (为所有支持的语言新增对应的 README)
+- Add 13 more display languages: Czech, German, Spanish, French, Hungarian, Italian, Japanese, Korean, Polish, Portuguese (Brazil), Russian, Turkish and Traditional Chinese. The extension now ships 15 localized languages.
+- Add localized README files for all supported languages.
 
 ### Changed
 
-- **[BREAKING!!!]** Remove `variable-conversion.disablePathFormat`, use the `variable-conversion.enabledPathFormats` enable switches instead. (移除 `variable-conversion.disablePathFormat` 配置项，请改用 `variable-conversion.enabledPathFormats` 启用开关)
-- **[BREAKING!!!]** Remove deprecated `variable-conversion.disableFormat`, use `variable-conversion.enabledFormats` instead. (移除已弃用的 `variable-conversion.disableFormat` 配置项，请使用 `variable-conversion.enabledFormats`)
+- **[BREAKING!!!]** Remove `variable-conversion.disablePathFormat`, use the `variable-conversion.enabledPathFormats` enable switches instead.
+- **[BREAKING!!!]** Remove deprecated `variable-conversion.disableFormat`, use `variable-conversion.enabledFormats` instead.
+
+<!--
+Entries from 3.0.0 onwards are written in English only; the bilingual entries
+below 3.0.0 are kept as they were published.
+-->
 
 ## 2.4.0
 

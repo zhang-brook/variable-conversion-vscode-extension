@@ -3,8 +3,8 @@
   "name": "variable-conversion",
   "displayName": "Variable Conversion",
   // 最长展示 300 字
-  "description": "一个强大的变量名转换插件，支持多种使用方式，支持大/小驼峰、下划线、连字符、空格/点分隔、大/小写等常用命名方式转换。 A powerful variable naming conversion extension. You can use it in many ways. Support camel, pascal, snake, kebab(spinal), space, dot, lower, upper case, and more.",
-  // "description": "一个强大的变量名转换插件，支持右键菜单、快捷键、状态栏等多种方式使用，支持小驼峰、大驼峰(帕斯卡)、下划线(蛇形)、中划线(连字符/脊柱式)、空格分隔、点分隔、全小写、全大写等常用命名方式(及组合)转换。 \nA powerful variable naming conversion extension. You can use it through the editor menu, shortcut keys and bottom bar. Support camel, pascal, snake, kebab(spinal), space, dot, lower, upper case, and more.",
+  "description": "%extension.description%",
+  // "description": "一个强大的变量名转换插件，支持多种使用方式，支持大/小驼峰、下划线、连字符、空格/点分隔、大/小写等常用命名方式转换。 A powerful variable naming conversion extension. You can use it in many ways. Support camel, pascal, snake, kebab(spinal), space, dot, lower, upper case, and more.",
   // 版本号
   "version": "2.3.4",
   // logo
@@ -116,18 +116,21 @@
        */
       {
         "command": "variable-conversion.convertCase",
-        "title": "变量转换"
+        // "title": "变量转换"
+        "title": "%command.convertCase.title%"
       },
       /**
        * vscode 自定义快捷键页 - 快捷键文字描述
        */
       {
         "command": "variable-conversion.cyclicConvertCase.previous",
-        "title": "变量转换 - 转换为上一个命名方式"
+        // "title": "变量转换 - 转换为上一个命名方式"
+        "title": "%command.cyclicConvertCase.previous.title%"
       },
       {
         "command": "variable-conversion.cyclicConvertCase.next",
-        "title": "变量转换 - 转换为下一个命名方式"
+        // "title": "变量转换 - 转换为下一个命名方式"
+        "title": "%command.cyclicConvertCase.next.title%"
       },
       /**
        * 右键菜单 - 子菜单
@@ -135,88 +138,108 @@
       // group-1-camel
       {
         "command": "variable-conversion.toCamelCase",
-        "title": "小驼峰(驼峰)命名 (Camel Case) [ fooBar ]"
+        // "title": "小驼峰(驼峰)命名 (Camel Case) [ fooBar ]"
+        "title": "%command.toCamelCase.title%"
       },
       {
         "command": "variable-conversion.toPascalCase",
-        "title": "大驼峰(帕斯卡)命名 (Pascal Case) [ FooBar ]"
+        // "title": "大驼峰(帕斯卡)命名 (Pascal Case) [ FooBar ]"
+        "title": "%command.toPascalCase.title%"
       },
       // group-2-snake
       {
         "command": "variable-conversion.toSnakeCase",
-        "title": "下划线(蛇形)命名 (Snake Case) [ foo_bar ]"
+        // "title": "下划线(蛇形)命名 (Snake Case) [ foo_bar ]"
+        "title": "%command.toSnakeCase.title%"
       },
       {
         "command": "variable-conversion.toSnakeUpperCase",
-        "title": "下划线(蛇形) + 全大写命名 (Snake Upper Case) [ FOO_BAR ]"
+        // "title": "下划线(蛇形) + 全大写命名 (Snake Upper Case) [ FOO_BAR ]"
+        "title": "%command.toSnakeUpperCase.title%"
       },
       {
         "command": "variable-conversion.toSnakePascalCase",
-        "title": "下划线(蛇形) + 大驼峰(帕斯卡)命名 (Snake Pascal Case) [ Foo_Bar ]"
+        // "title": "下划线(蛇形) + 大驼峰(帕斯卡)命名 (Snake Pascal Case) [ Foo_Bar ]"
+        "title": "%command.toSnakePascalCase.title%"
       },
       {
         "command": "variable-conversion.toSnakeCamelCase",
-        "title": "下划线(蛇形) + 小驼峰(驼峰)命名 (Snake Camel Case) [ foo_Bar ]"
+        // "title": "下划线(蛇形) + 小驼峰(驼峰)命名 (Snake Camel Case) [ foo_Bar ]"
+        "title": "%command.toSnakeCamelCase.title%"
       },
       // group-3-kebab
       {
         "command": "variable-conversion.toKebabCase",
-        "title": "中划线(连字符/脊柱式)命名 (Kebab/Spinal Case) [ foo-bar ]"
+        // "title": "中划线(连字符/脊柱式)命名 (Kebab/Spinal Case) [ foo-bar ]"
+        "title": "%command.toKebabCase.title%"
       },
       {
         "command": "variable-conversion.toKebabUpperCase",
-        "title": "中划线(连字符/脊柱式) + 全大写命名 (Kebab Upper Case) [ FOO-BAR ]"
+        // "title": "中划线(连字符/脊柱式) + 全大写命名 (Kebab Upper Case) [ FOO-BAR ]"
+        "title": "%command.toKebabUpperCase.title%"
       },
       {
         "command": "variable-conversion.toKebabPascalCase",
-        "title": "中划线(连字符/脊柱式) + 大驼峰(帕斯卡)命名 (Kebab Pascal Case) [ Foo-Bar ]"
+        // "title": "中划线(连字符/脊柱式) + 大驼峰(帕斯卡)命名 (Kebab Pascal Case) [ Foo-Bar ]"
+        "title": "%command.toKebabPascalCase.title%"
       },
       {
         "command": "variable-conversion.toKebabCamelCase",
-        "title": "中划线(连字符/脊柱式) + 小驼峰(驼峰)命名 (Kebab Camel Case) [ foo-Bar ]"
+        // "title": "中划线(连字符/脊柱式) + 小驼峰(驼峰)命名 (Kebab Camel Case) [ foo-Bar ]"
+        "title": "%command.toKebabCamelCase.title%"
       },
       // group-4-space
       {
         "command": "variable-conversion.toSpaceCase",
-        "title": "空格分隔命名 (Space Case) [ foo bar ]"
+        // "title": "空格分隔命名 (Space Case) [ foo bar ]"
+        "title": "%command.toSpaceCase.title%"
       },
       {
         "command": "variable-conversion.toSpaceUpperCase",
-        "title": "空格分隔 + 全大写命名 (Space Upper Case) [ FOO BAR ]"
+        // "title": "空格分隔 + 全大写命名 (Space Upper Case) [ FOO BAR ]"
+        "title": "%command.toSpaceUpperCase.title%"
       },
       {
         "command": "variable-conversion.toSpacePascalCase",
-        "title": "空格分隔 + 大驼峰(帕斯卡)命名 (Space Pascal Case) [ Foo Bar ]"
+        // "title": "空格分隔 + 大驼峰(帕斯卡)命名 (Space Pascal Case) [ Foo Bar ]"
+        "title": "%command.toSpacePascalCase.title%"
       },
       {
         "command": "variable-conversion.toSpaceCamelCase",
-        "title": "空格分隔 + 小驼峰(驼峰)命名 (Space Camel Case) [ foo Bar ]"
+        // "title": "空格分隔 + 小驼峰(驼峰)命名 (Space Camel Case) [ foo Bar ]"
+        "title": "%command.toSpaceCamelCase.title%"
       },
       // group-5-dot
       {
         "command": "variable-conversion.toDotCase",
-        "title": "点分隔命名 (Dot Case) [ foo bar ]"
+        // "title": "点分隔命名 (Dot Case) [ foo bar ]"
+        "title": "%command.toDotCase.title%"
       },
       {
         "command": "variable-conversion.toDotUpperCase",
-        "title": "点分隔 + 全大写命名 (Dot Upper Case) [ FOO BAR ]"
+        // "title": "点分隔 + 全大写命名 (Dot Upper Case) [ FOO BAR ]"
+        "title": "%command.toDotUpperCase.title%"
       },
       {
         "command": "variable-conversion.toDotPascalCase",
-        "title": "点分隔 + 大驼峰(帕斯卡)命名 (Dot Pascal Case) [ Foo Bar ]"
+        // "title": "点分隔 + 大驼峰(帕斯卡)命名 (Dot Pascal Case) [ Foo Bar ]"
+        "title": "%command.toDotPascalCase.title%"
       },
       {
         "command": "variable-conversion.toDotCamelCase",
-        "title": "点分隔 + 小驼峰(驼峰)命名 (Dot Camel Case) [ foo Bar ]"
+        // "title": "点分隔 + 小驼峰(驼峰)命名 (Dot Camel Case) [ foo Bar ]"
+        "title": "%command.toDotCamelCase.title%"
       },
       // group-6-upper-lower
       {
         "command": "variable-conversion.toLowerCase",
-        "title": "全小写 (Lower Case) [ foobar ]"
+        // "title": "全小写 (Lower Case) [ foobar ]"
+        "title": "%command.toLowerCase.title%"
       },
       {
         "command": "variable-conversion.toUpperCase",
-        "title": "全大写 (Upper Case) [ FOOBAR ]"
+        // "title": "全大写 (Upper Case) [ FOOBAR ]"
+        "title": "%command.toUpperCase.title%"
       },
       // 隐藏命令
       // {
@@ -254,18 +277,21 @@
        */
       {
         "command": "variable-conversion.convertPath",
-        "title": "路径转换"
+        // "title": "路径转换"
+        "title": "%command.convertPath.title%"
       },
       /**
        * vscode 自定义快捷键页 - 快捷键文字描述
        */
       {
         "command": "variable-conversion.cyclicConvertPath.previous",
-        "title": "路径转换 - 转换为上一个路径格式"
+        // "title": "路径转换 - 转换为上一个路径格式"
+        "title": "%command.cyclicConvertPath.previous.title%"
       },
       {
         "command": "variable-conversion.cyclicConvertPath.next",
-        "title": "路径转换 - 转换为下一个路径格式"
+        // "title": "路径转换 - 转换为下一个路径格式"
+        "title": "%command.cyclicConvertPath.next.title%"
       },
       /**
        * 右键菜单 - 子菜单
@@ -273,11 +299,13 @@
       // group-1-common-style
       {
         "command": "variable-conversion.pathFormat.toWindowsStyle",
-        "title": "Windows 风格 [ C:\\Windows\\System32 ]"
+        // "title": "Windows 风格 [ C:\\Windows\\System32 ]"
+        "title": "%command.pathFormat.toWindowsStyle.title%"
       },
       {
         "command": "variable-conversion.pathFormat.toUnixStyle",
-        "title": "Unix 风格 [ /usr/bin ]"
+        // "title": "Unix 风格 [ /usr/bin ]"
+        "title": "%command.pathFormat.toUnixStyle.title%"
       }
     ],
     // docs: https://code.visualstudio.com/api/references/contribution-points#contributes.menus
@@ -475,17 +503,20 @@
     "submenus": [
       {
         "id": "variable-conversion.stringConversionMenu",
-        "label": "将变量转换为..."
+        // "label": "将变量转换为..."
+        "label": "%submenu.stringConversion.label%"
       },
       {
         "id": "variable-conversion.pathConversionMenu",
-        "label": "将路径转换为..."
+        // "label": "将路径转换为..."
+        "label": "%submenu.pathConversion.label%"
       }
     ],
     // intro: https://code.visualstudio.com/api/ux-guidelines/settings
     // docs: https://code.visualstudio.com/api/references/contribution-points#contributes.configuration
     "configuration": {
-      "title": "Variable Conversion 变量转换",
+      // "title": "Variable Conversion 变量转换",
+      "title": "%configuration.title%",
       "properties": {
         // 仅测试用
         // "variable-conversion.test1": {
@@ -579,109 +610,130 @@
         "variable-conversion.enabledFormats": {
           "type": "object",
           // "description": "Tags and options configured here will be used by the Add Tags command to add tags to struct fields. If promptForTags is true, then user will be prompted for tags and options. By default, json tags are added.",
-          "markdownDescription": "配置启用的变量命名方式\n\nConfiguration of Enabled Variable Naming Conventions.\n\n[配置转换顺序](command:workbench.action.openSettings?%5B%22variable-conversion.formatOrder%22%5D)&nbsp;&nbsp;&nbsp;&nbsp;[查看当前配置(对话框)](command:variable-conversion.showConvertCaseDetailDialog)&nbsp;&nbsp;&nbsp;&nbsp;[在 settings.json 中编辑 (Edit in settings.json)](command:workbench.action.openSettingsJson)\n\n&nbsp;\n\n🌰 e.g. *Mike like eat ice-cream*\n\n对于这个句子，不同命名方式示例如下：\n\nFor this sentence, different naming conventions are as follows:",
+          // "markdownDescription": "配置启用的变量命名方式\n\nConfiguration of Enabled Variable Naming Conventions.\n\n[配置转换顺序](command:workbench.action.openSettings?%5B%22variable-conversion.formatOrder%22%5D)&nbsp;&nbsp;&nbsp;&nbsp;[查看当前配置(对话框)](command:variable-conversion.showConvertCaseDetailDialog)&nbsp;&nbsp;&nbsp;&nbsp;[在 settings.json 中编辑 (Edit in settings.json)](command:workbench.action.openSettingsJson)\n\n&nbsp;\n\n🌰 e.g. *Mike like eat ice-cream*\n\n对于这个句子，不同命名方式示例如下：\n\nFor this sentence, different naming conventions are as follows:",
+          "markdownDescription": "%configuration.enabledFormats.markdownDescription%",
           "scope": "window",
           "properties": {
             "lowerCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[全小写命名] lower case (全小写)\n 🌰e.g. mike like eat ice-cream"
+              // "description": "[全小写命名] lower case (全小写)\n 🌰e.g. mike like eat ice-cream"
+              "description": "%configuration.enabledFormats.lowerCase.description%"
               // "markdownDescription": "是否启用 [全小写] 目标转换格式\n\nEnable [lowercase] target conversion format\n\n\n\ne.g. Mike like eat ice-cream."
             },
             "snakeCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[全小写命名] snake case (下划线)\n 🌰e.g. mike_like_eat_ice_cream"
+              // "description": "[全小写命名] snake case (下划线)\n 🌰e.g. mike_like_eat_ice_cream"
+              "description": "%configuration.enabledFormats.snakeCase.description%"
             },
             "kebabCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[全小写命名] kebab case (连字符)\n 🌰e.g. mike-like-eat-ice-cream"
+              // "description": "[全小写命名] kebab case (连字符)\n 🌰e.g. mike-like-eat-ice-cream"
+              "description": "%configuration.enabledFormats.kebabCase.description%"
             },
             "spaceCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[全小写命名] space case (空格)\n 🌰e.g. mike like eat ice cream"
+              // "description": "[全小写命名] space case (空格)\n 🌰e.g. mike like eat ice cream"
+              "description": "%configuration.enabledFormats.spaceCase.description%"
             },
             "dotCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[全小写命名] dot case (点)\n 🌰e.g. mike.like.eat.ice.cream"
+              // "description": "[全小写命名] dot case (点)\n 🌰e.g. mike.like.eat.ice.cream"
+              "description": "%configuration.enabledFormats.dotCase.description%"
             },
             "upperCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[全大写命名] upper case (全大写)\n 🌰e.g. MIKE LIKE EAT ICE-CREAM"
+              // "description": "[全大写命名] upper case (全大写)\n 🌰e.g. MIKE LIKE EAT ICE-CREAM"
+              "description": "%configuration.enabledFormats.upperCase.description%"
             },
             "snakeUpperCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[全大写命名] snake upper case (下划线)\n 🌰e.g. MIKE_LIKE_EAT_ICE_CREAM"
+              // "description": "[全大写命名] snake upper case (下划线)\n 🌰e.g. MIKE_LIKE_EAT_ICE_CREAM"
+              "description": "%configuration.enabledFormats.snakeUpperCase.description%"
             },
             "kebabUpperCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[全大写命名] kebab upper case (连字符)\n 🌰e.g. MIKE-LIKE-EAT-ICE-CREAM"
+              // "description": "[全大写命名] kebab upper case (连字符)\n 🌰e.g. MIKE-LIKE-EAT-ICE-CREAM"
+              "description": "%configuration.enabledFormats.kebabUpperCase.description%"
             },
             "spaceUpperCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[全大写命名] space upper case (空格)\n 🌰e.g. MIKE LIKE EAT ICE CREAM"
+              // "description": "[全大写命名] space upper case (空格)\n 🌰e.g. MIKE LIKE EAT ICE CREAM"
+              "description": "%configuration.enabledFormats.spaceUpperCase.description%"
             },
             "dotUpperCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[全大写命名] dot upper case (点)\n 🌰e.g. MIKE.LIKE.EAT.ICE.CREAM"
+              // "description": "[全大写命名] dot upper case (点)\n 🌰e.g. MIKE.LIKE.EAT.ICE.CREAM"
+              "description": "%configuration.enabledFormats.dotUpperCase.description%"
             },
             "pascalCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[大驼峰命名] pascal case (大驼峰)\n 🌰e.g. MikeLikeEatIceCream"
+              // "description": "[大驼峰命名] pascal case (大驼峰)\n 🌰e.g. MikeLikeEatIceCream"
+              "description": "%configuration.enabledFormats.pascalCase.description%"
             },
             "snakePascalCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[大驼峰命名] snake pascal case (下划线)\n 🌰e.g. Mike_Like_Eat_Ice_Cream"
+              // "description": "[大驼峰命名] snake pascal case (下划线)\n 🌰e.g. Mike_Like_Eat_Ice_Cream"
+              "description": "%configuration.enabledFormats.snakePascalCase.description%"
             },
             "kebabPascalCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[大驼峰命名] kebab pascal case (连字符)\n 🌰e.g. Mike-Like-Eat-Ice-Cream"
+              // "description": "[大驼峰命名] kebab pascal case (连字符)\n 🌰e.g. Mike-Like-Eat-Ice-Cream"
+              "description": "%configuration.enabledFormats.kebabPascalCase.description%"
             },
             "spacePascalCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[大驼峰命名] space pascal case (空格)\n 🌰e.g. Mike Like Eat Ice Cream"
+              // "description": "[大驼峰命名] space pascal case (空格)\n 🌰e.g. Mike Like Eat Ice Cream"
+              "description": "%configuration.enabledFormats.spacePascalCase.description%"
             },
             "dotPascalCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[大驼峰命名] dot pascal case (点)\n 🌰e.g. Mike.Like.Eat.Ice.Cream"
+              // "description": "[大驼峰命名] dot pascal case (点)\n 🌰e.g. Mike.Like.Eat.Ice.Cream"
+              "description": "%configuration.enabledFormats.dotPascalCase.description%"
             },
             "camelCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[小驼峰命名] camel case (小驼峰)\n 🌰e.g. mikeLikeEatIceCream"
+              // "description": "[小驼峰命名] camel case (小驼峰)\n 🌰e.g. mikeLikeEatIceCream"
+              "description": "%configuration.enabledFormats.camelCase.description%"
             },
             "snakeCamelCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[小驼峰命名] snake camel case (下划线)\n 🌰e.g. mike_Like_Eat_Ice_Cream"
+              // "description": "[小驼峰命名] snake camel case (下划线)\n 🌰e.g. mike_Like_Eat_Ice_Cream"
+              "description": "%configuration.enabledFormats.snakeCamelCase.description%"
             },
             "kebabCamelCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[小驼峰命名] kebab camel case (连字符)\n 🌰e.g. mike-Like-Eat-Ice-Cream"
+              // "description": "[小驼峰命名] kebab camel case (连字符)\n 🌰e.g. mike-Like-Eat-Ice-Cream"
+              "description": "%configuration.enabledFormats.kebabCamelCase.description%"
             },
             "spaceCamelCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[小驼峰命名] space camel case (空格)\n 🌰e.g. mike Like Eat Ice Cream"
+              // "description": "[小驼峰命名] space camel case (空格)\n 🌰e.g. mike Like Eat Ice Cream"
+              "description": "%configuration.enabledFormats.spaceCamelCase.description%"
             },
             "dotCamelCase.enabled": {
               "type": "boolean",
               "default": false,
-              "description": "[小驼峰命名] dot camel case (点)\n 🌰e.g. mike.Like.Eat.Ice.Cream"
+              // "description": "[小驼峰命名] dot camel case (点)\n 🌰e.g. mike.Like.Eat.Ice.Cream"
+              "description": "%configuration.enabledFormats.dotCamelCase.description%"
             }
           },
           "additionalProperties": false,
@@ -718,7 +770,8 @@
         },
         "variable-conversion.formatOrder": {
           "type": "array",
-          "markdownDescription": "配置变量命名方式的显示顺序\n\nConfigure the display order of variable naming conventions.\n\n如果某个格式在 enabledFormats 中被禁用，则即使在 formatOrder 中配置也不会显示。\n\nIf a format is disabled in enabledFormats, it will not be displayed even if configured in formatOrder.\n\n如您通过 [settings.json](command:workbench.action.openSettingsJson) 进行配置，请确保该配置中的格式名称与 enabledFormats 中的保持一致。\n\nWhen configuring via [settings.json](command:workbench.action.openSettingsJson), please ensure that the format names in this configuration match those in enabledFormats.\n\n🌰 e.g. `[\"camel_case\", \"snake_case\", \"pascal_case\"]`\n\n[配置启用的变量命名方式](command:workbench.action.openSettings?%5B%22variable-conversion.enabledFormats%22%5D)&nbsp;&nbsp;&nbsp;&nbsp;[查看当前配置(对话框)](command:variable-conversion.showConvertCaseDetailDialog)&nbsp;&nbsp;&nbsp;&nbsp;[在 settings.json 中编辑 (Edit in settings.json)](command:workbench.action.openSettingsJson)",
+          // "markdownDescription": "配置变量命名方式的显示顺序\n\nConfigure the display order of variable naming conventions.\n\n如果某个格式在 enabledFormats 中被禁用，则即使在 formatOrder 中配置也不会显示。\n\nIf a format is disabled in enabledFormats, it will not be displayed even if configured in formatOrder.\n\n如您通过 [settings.json](command:workbench.action.openSettingsJson) 进行配置，请确保该配置中的格式名称与 enabledFormats 中的保持一致。\n\nWhen configuring via [settings.json](command:workbench.action.openSettingsJson), please ensure that the format names in this configuration match those in enabledFormats.\n\n🌰 e.g. `[\"camel_case\", \"snake_case\", \"pascal_case\"]`\n\n[配置启用的变量命名方式](command:workbench.action.openSettings?%5B%22variable-conversion.enabledFormats%22%5D)&nbsp;&nbsp;&nbsp;&nbsp;[查看当前配置(对话框)](command:variable-conversion.showConvertCaseDetailDialog)&nbsp;&nbsp;&nbsp;&nbsp;[在 settings.json 中编辑 (Edit in settings.json)](command:workbench.action.openSettingsJson)",
+          "markdownDescription": "%configuration.formatOrder.markdownDescription%",
           "scope": "window",
           "items": {
             "type": "string",
@@ -744,27 +797,49 @@
               "lower_case",
               "upper_case"
             ],
+            // "enumDescriptions": [
+            //   "驼峰命名 (camel_case)",
+            //   "大驼峰命名 (pascal_case)",
+            //   "下划线命名 (snake_case)",
+            //   "下划线驼峰命名 (snake_camel_case)",
+            //   "下划线大驼峰命名 (snake_pascal_case)",
+            //   "下划线大写命名 (snake_upper_case)",
+            //   "连字符命名 (kebab_case)",
+            //   "连字符驼峰命名 (kebab_camel_case)",
+            //   "连字符大驼峰命名 (kebab_pascal_case)",
+            //   "连字符大写命名 (kebab_upper_case)",
+            //   "空格命名 (space_case)",
+            //   "空格驼峰命名 (space_camel_case)",
+            //   "空格大驼峰命名 (space_pascal_case)",
+            //   "空格大写命名 (space_upper_case)",
+            //   "点命名 (dot_case)",
+            //   "点驼峰命名 (dot_camel_case)",
+            //   "点大驼峰命名 (dot_pascal_case)",
+            //   "点大写命名 (dot_upper_case)",
+            //   "全小写命名 (lower_case)",
+            //   "全大写命名 (upper_case)"
+            // ]
             "enumDescriptions": [
-              "驼峰命名 (camel_case)",
-              "大驼峰命名 (pascal_case)",
-              "下划线命名 (snake_case)",
-              "下划线驼峰命名 (snake_camel_case)",
-              "下划线大驼峰命名 (snake_pascal_case)",
-              "下划线大写命名 (snake_upper_case)",
-              "连字符命名 (kebab_case)",
-              "连字符驼峰命名 (kebab_camel_case)",
-              "连字符大驼峰命名 (kebab_pascal_case)",
-              "连字符大写命名 (kebab_upper_case)",
-              "空格命名 (space_case)",
-              "空格驼峰命名 (space_camel_case)",
-              "空格大驼峰命名 (space_pascal_case)",
-              "空格大写命名 (space_upper_case)",
-              "点命名 (dot_case)",
-              "点驼峰命名 (dot_camel_case)",
-              "点大驼峰命名 (dot_pascal_case)",
-              "点大写命名 (dot_upper_case)",
-              "全小写命名 (lower_case)",
-              "全大写命名 (upper_case)"
+              "%enum.variableCase.camel_case%",
+              "%enum.variableCase.pascal_case%",
+              "%enum.variableCase.snake_case%",
+              "%enum.variableCase.snake_camel_case%",
+              "%enum.variableCase.snake_pascal_case%",
+              "%enum.variableCase.snake_upper_case%",
+              "%enum.variableCase.kebab_case%",
+              "%enum.variableCase.kebab_camel_case%",
+              "%enum.variableCase.kebab_pascal_case%",
+              "%enum.variableCase.kebab_upper_case%",
+              "%enum.variableCase.space_case%",
+              "%enum.variableCase.space_camel_case%",
+              "%enum.variableCase.space_pascal_case%",
+              "%enum.variableCase.space_upper_case%",
+              "%enum.variableCase.dot_case%",
+              "%enum.variableCase.dot_camel_case%",
+              "%enum.variableCase.dot_pascal_case%",
+              "%enum.variableCase.dot_upper_case%",
+              "%enum.variableCase.lower_case%",
+              "%enum.variableCase.upper_case%"
             ]
           },
           "default": []
@@ -772,8 +847,10 @@
         "variable-conversion.disableFormat": {
           "order": 1,
           // markdownDescription 最多配置 11 行
-          "markdownDescription": "定义哪些变量命名方式是禁用的\n\nDefine which variable formats are disabled.\n\n若您感觉以下配置比较麻烦，也可以选择在 `settings.json` 中编辑：\n\nIf you find the following configuration troublesome, you can also edit this configuration item in `settings.json`:\n\n`\"variable-conversion.disableFormat\": [ ... ],`\n\n[在 settings.json 中编辑 (Edit in settings.json)](command:workbench.action.openSettingsJson)\n\n配置后，您可能需要*重启扩展宿主*，或*重启当前窗口*才可使该配置完全生效（二选一即可）:\n\nYou may need to *restart extension host* or *reload window* after configuration to take full effect (either):\n\n[重启扩展宿主 (Restart Extension Host)](command:workbench.action.restartExtensionHost), [重启当前窗口 (Reload Window)](command:workbench.action.reloadWindow)",
-          "markdownDeprecationMessage": "**Deprecated**: Please use `#variable-conversion.enabledFormats#` instead.\n\n**已弃用**，请使用 `#variable-conversion.enabledFormats#`。",
+          // "markdownDescription": "定义哪些变量命名方式是禁用的\n\nDefine which variable formats are disabled.\n\n若您感觉以下配置比较麻烦，也可以选择在 `settings.json` 中编辑：\n\nIf you find the following configuration troublesome, you can also edit this configuration item in `settings.json`:\n\n`\"variable-conversion.disableFormat\": [ ... ],`\n\n[在 settings.json 中编辑 (Edit in settings.json)](command:workbench.action.openSettingsJson)\n\n配置后，您可能需要*重启扩展宿主*，或*重启当前窗口*才可使该配置完全生效（二选一即可）:\n\nYou may need to *restart extension host* or *reload window* after configuration to take full effect (either):\n\n[重启扩展宿主 (Restart Extension Host)](command:workbench.action.restartExtensionHost), [重启当前窗口 (Reload Window)](command:workbench.action.reloadWindow)",
+          "markdownDescription": "%configuration.disableFormat.markdownDescription%",
+          // "markdownDeprecationMessage": "**Deprecated**: Please use `#variable-conversion.enabledFormats#` instead.\n\n**已弃用**，请使用 `#variable-conversion.enabledFormats#`。",
+          "markdownDeprecationMessage": "%configuration.disableFormat.markdownDeprecationMessage%",
           "type": "array",
           "items": {
             "type": "string",
@@ -799,27 +876,49 @@
               "lower_case",
               "upper_case"
             ],
+            // "enumDescriptions": [
+            //   "小驼峰(驼峰)命名",
+            //   "大驼峰(帕斯卡)命名",
+            //   "下划线(蛇形)命名",
+            //   "下划线(蛇形) + 小驼峰(驼峰)命名",
+            //   "下划线(蛇形) + 大驼峰(帕斯卡)命名",
+            //   "下划线(蛇形) + 全大写命名",
+            //   "中划线(连字符/脊柱式)命名",
+            //   "中划线(连字符/脊柱式) + 小驼峰(驼峰)命名",
+            //   "中划线(连字符/脊柱式) + 大驼峰(帕斯卡)命名",
+            //   "中划线(连字符/脊柱式) + 全大写命名",
+            //   "空格分隔命名",
+            //   "空格分隔 + 小驼峰(驼峰)命名",
+            //   "空格分隔 + 大驼峰(帕斯卡)命名",
+            //   "空格分隔 + 全大写命名",
+            //   "点分隔命名",
+            //   "点分隔 + 小驼峰(驼峰)命名",
+            //   "点分隔 + 大驼峰(帕斯卡)命名",
+            //   "点分隔 + 全大写命名",
+            //   "全小写",
+            //   "全大写"
+            // ]
             "enumDescriptions": [
-              "小驼峰(驼峰)命名",
-              "大驼峰(帕斯卡)命名",
-              "下划线(蛇形)命名",
-              "下划线(蛇形) + 小驼峰(驼峰)命名",
-              "下划线(蛇形) + 大驼峰(帕斯卡)命名",
-              "下划线(蛇形) + 全大写命名",
-              "中划线(连字符/脊柱式)命名",
-              "中划线(连字符/脊柱式) + 小驼峰(驼峰)命名",
-              "中划线(连字符/脊柱式) + 大驼峰(帕斯卡)命名",
-              "中划线(连字符/脊柱式) + 全大写命名",
-              "空格分隔命名",
-              "空格分隔 + 小驼峰(驼峰)命名",
-              "空格分隔 + 大驼峰(帕斯卡)命名",
-              "空格分隔 + 全大写命名",
-              "点分隔命名",
-              "点分隔 + 小驼峰(驼峰)命名",
-              "点分隔 + 大驼峰(帕斯卡)命名",
-              "点分隔 + 全大写命名",
-              "全小写",
-              "全大写"
+              "%enum.variableCase.camel_case%",
+              "%enum.variableCase.pascal_case%",
+              "%enum.variableCase.snake_case%",
+              "%enum.variableCase.snake_camel_case%",
+              "%enum.variableCase.snake_pascal_case%",
+              "%enum.variableCase.snake_upper_case%",
+              "%enum.variableCase.kebab_case%",
+              "%enum.variableCase.kebab_camel_case%",
+              "%enum.variableCase.kebab_pascal_case%",
+              "%enum.variableCase.kebab_upper_case%",
+              "%enum.variableCase.space_case%",
+              "%enum.variableCase.space_camel_case%",
+              "%enum.variableCase.space_pascal_case%",
+              "%enum.variableCase.space_upper_case%",
+              "%enum.variableCase.dot_case%",
+              "%enum.variableCase.dot_camel_case%",
+              "%enum.variableCase.dot_pascal_case%",
+              "%enum.variableCase.dot_upper_case%",
+              "%enum.variableCase.lower_case%",
+              "%enum.variableCase.upper_case%"
             ]
           },
           "default": []
@@ -908,7 +1007,8 @@
         "variable-conversion.disablePathFormat": {
           "order": 3,
           // markdownDescription 最多配置 11 行
-          "markdownDescription": "定义哪些路径风格是禁用的\n\nDefine which path formats are disabled.\n\n若您感觉以下配置比较麻烦，也可以选择在 `settings.json` 中编辑：\n\nIf you find the following configuration troublesome, you can also edit this configuration item in `settings.json`:\n\n`\"variable-conversion.disablePathFormat\": [ ... ],`\n\n[在 settings.json 中编辑 (Edit in settings.json)](command:workbench.action.openSettingsJson)\n\n配置后，您可能需要*重启扩展宿主*，或*重启当前窗口*才可使该配置完全生效（二选一即可）:\n\nYou may need to *restart extension host* or *reload window* after configuration to take full effect (either):\n\n[重启扩展宿主 (Restart Extension Host)](command:workbench.action.restartExtensionHost), [重启当前窗口 (Reload Window)](command:workbench.action.reloadWindow)",
+          // "markdownDescription": "定义哪些路径风格是禁用的\n\nDefine which path formats are disabled.\n\n若您感觉以下配置比较麻烦，也可以选择在 `settings.json` 中编辑：\n\nIf you find the following configuration troublesome, you can also edit this configuration item in `settings.json`:\n\n`\"variable-conversion.disablePathFormat\": [ ... ],`\n\n[在 settings.json 中编辑 (Edit in settings.json)](command:workbench.action.openSettingsJson)\n\n配置后，您可能需要*重启扩展宿主*，或*重启当前窗口*才可使该配置完全生效（二选一即可）:\n\nYou may need to *restart extension host* or *reload window* after configuration to take full effect (either):\n\n[重启扩展宿主 (Restart Extension Host)](command:workbench.action.restartExtensionHost), [重启当前窗口 (Reload Window)](command:workbench.action.reloadWindow)",
+          "markdownDescription": "%configuration.disablePathFormat.markdownDescription%",
           "type": "array",
           "items": {
             "type": "string",
@@ -916,9 +1016,13 @@
               "windows_style",
               "unix_style"
             ],
+            // "enumDescriptions": [
+            //   "Windows 风格",
+            //   "Unix 风格"
+            // ]
             "enumDescriptions": [
-              "Windows 风格",
-              "Unix 风格"
+              "%enum.pathFormat.windows_style%",
+              "%enum.pathFormat.unix_style%"
             ]
           },
           "default": []

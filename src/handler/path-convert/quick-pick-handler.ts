@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import QuickPickItemEx from "../types/QuickPickItemExType";
-import { QuickPickSupportCaseItem, quickPickSupportCases } from '../../core/path-convert/types/SupportPathFormatType';
+import { QuickPickSupportCaseItem, quickPickSupportCases, settingsKeyToEnableSettingsKey } from '../../core/path-convert/types/SupportPathFormatType';
 import { TransformTextResult } from '../../types/TransformTextResultType';
 import { transformMultiSelectionText } from '../../utils/transform';
 import { EOL } from '../../types/EOLType';
@@ -96,19 +96,23 @@ export function handleQuickPick() {
         return;
     }
 
-    // TODO
     // 获取用户配置
-    const disablePathFormatList = getUserConfigurations<Array<string>>('disablePathFormat') || [];
-    // 排除禁用的选项
+    const enabledPathFormats = getUserConfigurations<Record<string, boolean>>('enabledPathFormats') || {};
+    // 排除未启用的选项
     const enabledQuickPickSupportCases = [];
     for (const quickPick of quickPickSupportCases) {
-        if (disablePathFormatList.includes(quickPick.settingsKey)) {
+        const enableSettingsKey = settingsKeyToEnableSettingsKey.get(quickPick.settingsKey);
+        if (!enableSettingsKey) {
+            console.warn('Cannot find enableSettingsKey for settingsKey:', quickPick.settingsKey);
+            continue;
+        }
+        if (enabledPathFormats[enableSettingsKey] === false) {
             continue;
         }
         enabledQuickPickSupportCases.push(quickPick);
     }
     if (enabledQuickPickSupportCases.length === 0) {
-        vscode.window.showInformationMessage(vscode.l10n.t('All path formats have been disabled. Update the `variable-conversion.disablePathFormat` setting and try again.'));
+        vscode.window.showInformationMessage(vscode.l10n.t('All path formats have been disabled. Update the `variable-conversion.enabledPathFormats` setting and try again.'));
         return;
     }
 

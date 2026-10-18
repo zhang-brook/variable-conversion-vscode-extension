@@ -57,15 +57,15 @@ export function activate(context: vscode.ExtensionContext) {
 		// issue: #1 https://github.com/zhang-brook/variable-conversion-vscode-extension/issues/1
 		// 获取用户配置
 		const enabledFormats = getUserConfigurations<Record<string, boolean>>('enabledFormats') || {};
-		const disablePathFormatList = getUserConfigurations<Array<string>>('disablePathFormat') || [];
+		const enabledPathFormats = getUserConfigurations<Record<string, boolean>>('enabledPathFormats') || {};
 		// 更新右键菜单每一项是否展示
 		// 变量转换右键菜单visible 2024.07.29
 		for (const { settingsKey, enableSettingsKey } of variableCommands) {
 			vscode.commands.executeCommand('setContext', '_isHideSubMenuItem_' + settingsKey, enabledFormats[enableSettingsKey] === false);
 		}
 		// 路径转换右键菜单visible 2024.12.14
-		for (const { settingsKey } of pathCommands) {
-			vscode.commands.executeCommand('setContext', '_isHideSubMenuItem_' + settingsKey, disablePathFormatList.includes(settingsKey));
+		for (const { settingsKey, enableSettingsKey } of pathCommands) {
+			vscode.commands.executeCommand('setContext', '_isHideSubMenuItem_' + settingsKey, enabledPathFormats[enableSettingsKey] === false);
 		}
 
 		// 判断是否展示状态栏按钮

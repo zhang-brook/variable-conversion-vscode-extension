@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { EOL } from "../../types/EOLType";
-import { cyclicConvertPathOrder } from "./types/SupportPathFormatType";
+import { cyclicConvertPathOrder, settingsKeyToEnableSettingsKey } from "./types/SupportPathFormatType";
 import { pathConversion } from "./conversion";
 import { isStringArrayEqual, stringListArrayDuplicateRemoval } from '../../utils/utils';
 import { getUserConfigurations } from '../../utils/user-configuration';
@@ -74,19 +74,22 @@ function lazyConvert() {
     }
 
     // 获取用户配置
-    // TODO
-    // const disablePathFormatList = getUserConfigurations<Array<string>>('disablePathFormat') || [];
+    const enabledPathFormats = getUserConfigurations<Record<string, boolean>>('enabledPathFormats') || {};
 
     const textList = userSelection.currentSelectionsText;
     // vscode.window.showInformationMessage('lazyConvert' + textList.join('\n'));
     const eol = userSelection.currentEol;
     const conversionsTarget: Array<string[]> = [textList];
     for (const cyclicConvertCase of cyclicConvertPathOrder) {
-        // 跳过禁用的目标格式
-        // TODO
-        // if (disablePathFormatList.includes(cyclicConvertCase.settingsKey)) {
-        //     continue;
-        // }
+        // 跳过未启用的目标格式
+        const enableSettingsKey = settingsKeyToEnableSettingsKey.get(cyclicConvertCase.settingsKey);
+        if (!enableSettingsKey) {
+            console.warn('Cannot find enableSettingsKey for settingsKey:', cyclicConvertCase.settingsKey);
+            continue;
+        }
+        if (enabledPathFormats[enableSettingsKey] === false) {
+            continue;
+        }
 
         // 每一个类型
         const conversionsTargetItem: string[] = [];

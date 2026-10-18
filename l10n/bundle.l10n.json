@@ -6,7 +6,7 @@
   "Select the variable you want to convert and try again.": "Select the variable you want to convert and try again.",
   "Select the path you want to convert and try again.": "Select the path you want to convert and try again.",
   "All formats have been disabled. Update the `variable-conversion.enabledFormats` setting and try again.": "All formats have been disabled. Update the `variable-conversion.enabledFormats` setting and try again.",
-  "All path formats have been disabled. Update the `variable-conversion.disablePathFormat` setting and try again.": "All path formats have been disabled. Update the `variable-conversion.disablePathFormat` setting and try again.",
+  "All path formats have been disabled. Update the `variable-conversion.enabledPathFormats` setting and try again.": "All path formats have been disabled. Update the `variable-conversion.enabledPathFormats` setting and try again.",
   "No conversion candidates are available for the selected content. Try selecting different text.": "No conversion candidates are available for the selected content. Try selecting different text.",
   "Select a naming convention": "Select a naming convention",
   "Select a path format": "Select a path format",

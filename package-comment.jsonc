@@ -41,6 +41,7 @@
     "onTextSelected"
   ],
   "main": "./out/extension.js",
+  "l10n": "./l10n",
   "contributes": {
     // docs: https://code.visualstudio.com/docs/getstarted/keybindings#_accepted-keys
     "keybindings": [
@@ -915,29 +916,29 @@
             "upper_case"
           ]
         },
-        // TODO
-        "variable-conversion.disablePathFormat": {
-          "order": 3,
-          // markdownDescription 最多配置 11 行
-          // "markdownDescription": "定义哪些路径风格是禁用的\n\nDefine which path formats are disabled.\n\n若您感觉以下配置比较麻烦，也可以选择在 `settings.json` 中编辑：\n\nIf you find the following configuration troublesome, you can also edit this configuration item in `settings.json`:\n\n`\"variable-conversion.disablePathFormat\": [ ... ],`\n\n[在 settings.json 中编辑 (Edit in settings.json)](command:workbench.action.openSettingsJson)\n\n配置后，您可能需要*重启扩展宿主*，或*重启当前窗口*才可使该配置完全生效（二选一即可）:\n\nYou may need to *restart extension host* or *reload window* after configuration to take full effect (either):\n\n[重启扩展宿主 (Restart Extension Host)](command:workbench.action.restartExtensionHost), [重启当前窗口 (Reload Window)](command:workbench.action.reloadWindow)",
-          "markdownDescription": "%configuration.disablePathFormat.markdownDescription%",
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "windows_style",
-              "unix_style"
-            ],
-            // "enumDescriptions": [
-            //   "Windows 风格",
-            //   "Unix 风格"
-            // ]
-            "enumDescriptions": [
-              "%enum.pathFormat.windows_style%",
-              "%enum.pathFormat.unix_style%"
-            ]
+        "variable-conversion.enabledPathFormats": {
+          "type": "object",
+          "markdownDescription": "%configuration.enabledPathFormats.markdownDescription%",
+          "scope": "window",
+          "properties": {
+            // Windows 风格
+            "windowsStyle.enabled": {
+              "type": "boolean",
+              "default": true,
+              "description": "%configuration.enabledPathFormats.windowsStyle.description%"
+            },
+            // Unix 风格
+            "unixStyle.enabled": {
+              "type": "boolean",
+              "default": true,
+              "description": "%configuration.enabledPathFormats.unixStyle.description%"
+            }
           },
-          "default": []
+          "additionalProperties": false,
+          "default": {
+            "windowsStyle.enabled": true,
+            "unixStyle.enabled": true
+          }
         }
       }
     }
@@ -946,8 +947,10 @@
     "vscode:prepublish": "pnpm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "pnpm run compile && pnpm run lint",
+    "pretest": "pnpm run compile && pnpm run lint && pnpm run check:i18n",
     "lint": "eslint src",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "l10n:export": "vscode-l10n-dev export --outDir ./l10n ./src",
     "test": "vscode-test",
     "package": "npx @vscode/vsce package",
     "publish": "npx @vscode/vsce publish & npx ovsx publish"
@@ -956,11 +959,12 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "24.x",
     "@types/vscode": "^1.100.0",
-    "typescript-eslint": "^8.61.1",
+    "@vscode/l10n-dev": "^0.0.35",
     "@vscode/test-cli": "^0.0.15",
     "@vscode/test-electron": "^3.0.0",
     "eslint": "^10.5.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
   },
   "overrides": {
     "diff": "^8.0.4",

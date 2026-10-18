@@ -73,7 +73,7 @@
   "enum.variableCase.dot_upper_case": "点大写命名 (dot_upper_case)",
   "enum.variableCase.lower_case": "全小写命名 (lower_case)",
   "enum.variableCase.upper_case": "全大写命名 (upper_case)",
-  "configuration.disablePathFormat.markdownDescription": "定义哪些路径风格是禁用的。\n\n您也可以直接在 `settings.json` 中编辑：\n\n`\"variable-conversion.disablePathFormat\": [ ... ],`\n\n[在 settings.json 中编辑](command:workbench.action.openSettingsJson)\n\n配置后，您可能需要*重启扩展宿主*或*重启当前窗口*才能完全生效：\n\n[重启扩展宿主](command:workbench.action.restartExtensionHost)、[重启当前窗口](command:workbench.action.reloadWindow)",
-  "enum.pathFormat.windows_style": "Windows 风格",
-  "enum.pathFormat.unix_style": "Unix 风格"
+  "configuration.enabledPathFormats.markdownDescription": "配置启用的路径风格。\n\n[在 settings.json 中编辑](command:workbench.action.openSettingsJson)",
+  "configuration.enabledPathFormats.windowsStyle.description": "Windows 风格\n\n🌰 `C:\\Users\\name\\Documents`",
+  "configuration.enabledPathFormats.unixStyle.description": "Unix 风格\n\n🌰 `/home/name/documents`"
 }

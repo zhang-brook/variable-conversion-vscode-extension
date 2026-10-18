@@ -73,7 +73,7 @@
   "enum.variableCase.dot_upper_case": "Dot upper case",
   "enum.variableCase.lower_case": "Lower case",
   "enum.variableCase.upper_case": "Upper case",
-  "configuration.disablePathFormat.markdownDescription": "Define which path formats are disabled.\n\nYou can also edit this setting in `settings.json`:\n\n`\"variable-conversion.disablePathFormat\": [ ... ],`\n\n[Edit in settings.json](command:workbench.action.openSettingsJson)\n\nYou may need to *restart the extension host* or *reload the window* for the configuration to take full effect:\n\n[Restart Extension Host](command:workbench.action.restartExtensionHost), [Reload Window](command:workbench.action.reloadWindow)",
-  "enum.pathFormat.windows_style": "Windows style",
-  "enum.pathFormat.unix_style": "Unix style"
+  "configuration.enabledPathFormats.markdownDescription": "Configure which path formats are enabled.\n\n[Edit in settings.json](command:workbench.action.openSettingsJson)",
+  "configuration.enabledPathFormats.windowsStyle.description": "Windows style\n\n🌰 `C:\\Users\\name\\Documents`",
+  "configuration.enabledPathFormats.unixStyle.description": "Unix style\n\n🌰 `/home/name/documents`"
 }

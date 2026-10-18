@@ -33,23 +33,39 @@ const keyword = {
     ],
 };
 
+interface Command {
+    command: string;
+    targetCase: SupportPathFormat;
+    settingsKey: string;
+    // variable-conversion.enabledPathFormats 中的配置项
+    enableSettingsKey: string;
+}
+
 /**
- * 接管的变量转换命令
+ * 接管的路径转换命令
  *
  * @since 2024-12-14
  */
-export const commands: Array<{ command: string; targetCase: SupportPathFormat; settingsKey: string }> = [
+export const commands: Array<Command> = [
     {
         command: 'variable-conversion.pathFormat.toWindowsStyle',
         targetCase: SupportPathFormat.Windows,
-        settingsKey: 'windows_style'
+        settingsKey: 'windows_style',
+        enableSettingsKey: 'windowsStyle.enabled',
     },
     {
         command: 'variable-conversion.pathFormat.toUnixStyle',
         targetCase: SupportPathFormat.Unix,
-        settingsKey: 'unix_style'
+        settingsKey: 'unix_style',
+        enableSettingsKey: 'unixStyle.enabled',
     },
 ];
+
+// settingsKey 到 enableSettingsKey 的映射
+export const settingsKeyToEnableSettingsKey = new Map<string, string>();
+commands.forEach(command => {
+    settingsKeyToEnableSettingsKey.set(command.settingsKey, command.enableSettingsKey);
+});
 
 /**
  * @since 2024-12-14
@@ -90,6 +106,6 @@ export interface CyclicConvertPathOrderItem {
  * @since 2024-12-14
  */
 export const cyclicConvertPathOrder: Array<CyclicConvertPathOrderItem> = [
-    { type: SupportPathFormat.Windows, settingsKey: 'windows' },
-    { type: SupportPathFormat.Unix, settingsKey: 'unix' },
+    { type: SupportPathFormat.Windows, settingsKey: 'windows_style' },
+    { type: SupportPathFormat.Unix, settingsKey: 'unix_style' },
 ];

@@ -6,7 +6,7 @@
   "Select the variable you want to convert and try again.": "请选择需要转换的变量后重试。",
   "Select the path you want to convert and try again.": "请选择需要转换的路径后重试。",
   "All formats have been disabled. Update the `variable-conversion.enabledFormats` setting and try again.": "所有格式都已被禁用，请修改配置 `variable-conversion.enabledFormats` 后重试。",
-  "All path formats have been disabled. Update the `variable-conversion.disablePathFormat` setting and try again.": "所有路径格式都已被禁用，请修改配置 `variable-conversion.disablePathFormat` 后重试。",
+  "All path formats have been disabled. Update the `variable-conversion.enabledPathFormats` setting and try again.": "所有路径格式都已被禁用，请修改配置 `variable-conversion.enabledPathFormats` 后重试。",
   "No conversion candidates are available for the selected content. Try selecting different text.": "所选内容暂无可选转换，请尝试重新选择。",
   "Select a naming convention": "请选择需要转换的命名方式...",
   "Select a path format": "请选择需要转换的路径风格...",

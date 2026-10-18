@@ -529,22 +529,27 @@
           },
           "default": []
         },
-        "variable-conversion.disablePathFormat": {
-          "order": 3,
-          "markdownDescription": "%configuration.disablePathFormat.markdownDescription%",
-          "type": "array",
-          "items": {
-            "type": "string",
-            "enum": [
-              "windows_style",
-              "unix_style"
-            ],
-            "enumDescriptions": [
-              "%enum.pathFormat.windows_style%",
-              "%enum.pathFormat.unix_style%"
-            ]
+        "variable-conversion.enabledPathFormats": {
+          "type": "object",
+          "markdownDescription": "%configuration.enabledPathFormats.markdownDescription%",
+          "scope": "window",
+          "properties": {
+            "windowsStyle.enabled": {
+              "type": "boolean",
+              "default": true,
+              "description": "%configuration.enabledPathFormats.windowsStyle.description%"
+            },
+            "unixStyle.enabled": {
+              "type": "boolean",
+              "default": true,
+              "description": "%configuration.enabledPathFormats.unixStyle.description%"
+            }
           },
-          "default": []
+          "additionalProperties": false,
+          "default": {
+            "windowsStyle.enabled": true,
+            "unixStyle.enabled": true
+          }
         }
       }
     }

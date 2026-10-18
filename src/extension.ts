@@ -1,7 +1,7 @@
 /**
  * @file extension.ts
  * @description 该文件包含了 VS Code 插件的主要扩展逻辑，包括命令注册、菜单配置和编辑器事件监听等。
- * @author coder-xiaomo
+ * @author zhang-brook
  * @version 1.0.0
  * @license MIT
  *
@@ -54,7 +54,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// 更新 _textSelectionLength (用于判断是否展示右键菜单)
 		vscode.commands.executeCommand('setContext', '_textSelectionLength', selectTextLength);
 
-		// issue: #1 https://github.com/coder-xiaomo/variable-conversion-vscode-extension/issues/1
+		// issue: #1 https://github.com/zhang-brook/variable-conversion-vscode-extension/issues/1
 		// 获取用户配置
 		const enabledFormats = getUserConfigurations<Record<string, boolean>>('enabledFormats') || {};
 		const disablePathFormatList = getUserConfigurations<Array<string>>('disablePathFormat') || [];
@@ -141,7 +141,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// 2026.02.21 fix: 自定义快捷键后, package.json 中注册的 contributes.keybindings 绑定的快捷键 args 参数未携带过来, 导致 param 为 undefined, 直接解包会报错
 		// 不知 vscode 宿主为何未携带 args 参数, 可能是 vscode 侧 bug? 经测试 1.109.5 版本有此问题, 后续问题是否依然存在有待观察
 		// 目前此处不使用 arrowKey 参数, 所以这里暂时不再解包以避免报错影响转换逻辑
-		// issue: #8 https://github.com/coder-xiaomo/variable-conversion-vscode-extension/issues/8
+		// issue: #8 https://github.com/zhang-brook/variable-conversion-vscode-extension/issues/8
 		console.log('variable-conversion.cyclicConvertCase.previous', 'param:', param); // param.arrowKey
 		CyclicConversionVariable.previousOne();
 	});
@@ -150,7 +150,7 @@ export function activate(context: vscode.ExtensionContext) {
 		// 2026.02.21 fix: 自定义快捷键后, package.json 中注册的 contributes.keybindings 绑定的快捷键 args 参数未携带过来, 导致 param 为 undefined, 直接解包会报错
 		// 不知 vscode 宿主为何未携带 args 参数, 可能是 vscode 侧 bug? 经测试 1.109.5 版本有此问题, 后续问题是否依然存在有待观察
 		// 目前此处不使用 arrowKey 参数, 所以这里暂时不再解包以避免报错影响转换逻辑
-		// issue: #8 https://github.com/coder-xiaomo/variable-conversion-vscode-extension/issues/8
+		// issue: #8 https://github.com/zhang-brook/variable-conversion-vscode-extension/issues/8
 		console.log('variable-conversion.cyclicConvertCase.next', 'param:', param); // param.arrowKey
 		CyclicConversionVariable.nextOne();
 	});
@@ -163,7 +163,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	/**
 	 * 路径转换
-	 * issue: #3 https://github.com/coder-xiaomo/variable-conversion-vscode-extension/issues/3
+	 * issue: #3 https://github.com/zhang-brook/variable-conversion-vscode-extension/issues/3
 	 *
 	 * @since 2024-12
 	 */

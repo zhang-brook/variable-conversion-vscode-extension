@@ -1,6 +1,6 @@
 # 变量命名转换助手 — Variable Conversion (VSCode 扩展)
 
-[Marketplace](https://marketplace.visualstudio.com/items?itemName=coder-xiaomo.variable-conversion) [OpenVSX](https://open-vsx.org/extension/coder-xiaomo/variable-conversion) [GitHub](https://github.com/coder-xiaomo/variable-conversion-vscode-extension.git) [Gitee](https://gitee.com/coder-xiaomo/variable-conversion-vscode-extension.git)
+[Marketplace](https://marketplace.visualstudio.com/items?itemName=coder-xiaomo.variable-conversion) [OpenVSX](https://open-vsx.org/extension/coder-xiaomo/variable-conversion) [GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension.git) [Gitee](https://gitee.com/zhang-brook/variable-conversion-vscode-extension.git)
 
 一个强大的变量命名及路径风格转换插件，支持一键转换、循环转换，支持右键菜单、快捷键、状态栏等多种方式使用。<br>
 A powerful variable and path conversion extension. Supports one-key conversion & cyclic conversion. You can use it through the editor menu, shortcut keys and status bar.
@@ -28,7 +28,7 @@ A powerful variable and path conversion extension. Supports one-key conversion &
 - ✅ 支持撤回 & 重做 Support undo & redo (Ctrl + Z / Ctrl + Y)
 - ✅ 支持仅开启部分目标转换格式 Support enabling only partial target conversion formats
 
-> 🔭 Tips for Chinese users: 如果您无法看到下文图片，请[点这里](https://gitee.com/coder-xiaomo/variable-conversion-vscode-extension/blob/main/README.md)查看
+> 🔭 Tips for Chinese users: 如果您无法看到下文图片，请[点这里](https://gitee.com/zhang-brook/variable-conversion-vscode-extension/blob/main/README.md)查看
 
 ## 如何使用？ How to Use?
 
@@ -196,17 +196,17 @@ GitHub 上这种表格高亮行会有问题（表头不会高亮）
 
 ## 反馈 Feedback
 
-如果您觉得本插件还不够好用，有更好的使用建议；或者发现了 BUG，欢迎[前往 GitHub 仓库提 issue](https://github.com/coder-xiaomo/variable-conversion-vscode-extension/issues). 使用简体中文、繁體中文或 English 均可，不建议使用翻译软件翻译，否则可能会让文字描述变得抽象难懂。<br>
-If you feel that this extension is not good to use, or you have a better use suggestion, or found a BUG, welcome to [create an issue on GitHub](https://github.com/coder-xiaomo/variable-conversion-vscode-extension/issues). English, 简体中文 or 繁體中文 are all supported, it is not recommended to use translation software, otherwise it may make the text description become abstract and difficult to understand.
+如果您觉得本插件还不够好用，有更好的使用建议；或者发现了 BUG，欢迎[前往 GitHub 仓库提 issue](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). 使用简体中文、繁體中文或 English 均可，不建议使用翻译软件翻译，否则可能会让文字描述变得抽象难懂。<br>
+If you feel that this extension is not good to use, or you have a better use suggestion, or found a BUG, welcome to [create an issue on GitHub](https://github.com/zhang-brook/variable-conversion-vscode-extension/issues). English, 简体中文 or 繁體中文 are all supported, it is not recommended to use translation software, otherwise it may make the text description become abstract and difficult to understand.
 
 ## 开源共建 OpenSource & Contribute
 
 本插件已开源(MIT License)，欢迎提 Pr 共建，让插件变得更好用！<br>
 This plug-in has been open source (MIT License), welcome to Pr co-construction, let the plug-in become better!
 
-GitHub Repo (开源地址): https://github.com/coder-xiaomo/variable-conversion-vscode-extension.git
+GitHub Repo (开源地址): https://github.com/zhang-brook/variable-conversion-vscode-extension.git
 
-Gitee Mirror (码云镜像): https://gitee.com/coder-xiaomo/variable-conversion-vscode-extension.git
+Gitee Mirror (码云镜像): https://gitee.com/zhang-brook/variable-conversion-vscode-extension.git
 
 -----
 

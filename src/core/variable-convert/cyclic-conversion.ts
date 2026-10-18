@@ -85,7 +85,7 @@ function lazyConvert() {
     // const conversionsTarget: Array<string[]> = [textList];
     const formatMap = new Map<string, string[]>();
     for (const cyclicConvertCase of cyclicConvertCaseOrder) {
-        // issue: #1 https://github.com/coder-xiaomo/variable-conversion-vscode-extension/issues/1
+        // issue: #1 https://github.com/zhang-brook/variable-conversion-vscode-extension/issues/1
         // 跳过禁用的目标格式
         const enableSettingsKey = settingsKeyToEnableSettingsKey.get(cyclicConvertCase.settingsKey);
         if (!enableSettingsKey) {

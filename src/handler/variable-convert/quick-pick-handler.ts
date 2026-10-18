@@ -106,7 +106,7 @@ export function handleQuickPick() {
     const formatOrder = getUserConfigurations<string[]>('formatOrder') || [];
 
     // 排除禁用的选项
-    // issue: #1 https://github.com/coder-xiaomo/variable-conversion-vscode-extension/issues/1
+    // issue: #1 https://github.com/zhang-brook/variable-conversion-vscode-extension/issues/1
     const enabledQuickPickSupportCases = [];
     for (const quickPick of quickPickSupportCases) {
         const enableSettingsKey = settingsKeyToEnableSettingsKey.get(quickPick.settingsKey);
@@ -126,8 +126,8 @@ export function handleQuickPick() {
     }
 
     // 按用户配置的顺序排序
-    // issue: #5 https://github.com/coder-xiaomo/variable-conversion-vscode-extension/issues/5
-    // issue: #6 https://github.com/coder-xiaomo/variable-conversion-vscode-extension/issues/6
+    // issue: #5 https://github.com/zhang-brook/variable-conversion-vscode-extension/issues/5
+    // issue: #6 https://github.com/zhang-brook/variable-conversion-vscode-extension/issues/6
     if (formatOrder.length > 0) {
         enabledQuickPickSupportCases.sort((a, b) => {
             const indexA = formatOrder.indexOf(a.settingsKey);

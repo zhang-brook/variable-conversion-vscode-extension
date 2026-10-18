@@ -25,7 +25,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -->
 
-## [Unreleased]
+## 3.0.1
+
+### Fixed
+
+- Fix the broken logo image on the published README pages, caused by the logo file rename.
 
 ### Internal
 

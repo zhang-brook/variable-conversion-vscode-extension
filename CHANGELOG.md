@@ -25,6 +25,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -->
 
+## 2.3.3
+
+This release does not include functional changes (本次变更不包含功能性改动)
+
+### Internal
+
+- Update repository URLs to `zhang-brook`. (仓库地址更新为 `zhang-brook`)
+- Support publishing to Visual Studio Marketplace and Open VSX Registry with one command. (支持通过一条命令同时发布至 Visual Studio Marketplace 与 Open VSX Registry)
+- Update plugin framework dependencies to the latest version. (更新插件框架依赖至最新版本)
+
 ## 2.3.2
 
 This release does not include functional changes (本次变更不包含功能性改动)

@@ -21,3 +21,4 @@ out/test/**
 image/**
 # logo.png 是扩展图标, 需要保留
 !image/logo.png
+!image/logo@1024.png

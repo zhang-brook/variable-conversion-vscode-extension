@@ -1,4 +1,4 @@
-[English](README.en.md) | **简体中文**
+[English](README.md) | **简体中文**
 
 <p align="center">
   <img src="image/logo.png" width="128" alt="Variable Conversion logo">
@@ -22,7 +22,7 @@
 - ✅ 支持撤回 & 重做（Ctrl + Z / Ctrl + Y）
 - ✅ 支持仅开启部分目标转换格式
 
-> 🔭 提示：如果下方图片无法显示，可[前往 Gitee 查看](https://gitee.com/zhang-brook/variable-conversion-vscode-extension/blob/main/README.md)。
+> 🔭 提示：如果下方图片无法显示，可[前往 Gitee 查看](https://gitee.com/zhang-brook/variable-conversion-vscode-extension/blob/main/README.zh-CN.md)。
 
 ## 如何使用？
 

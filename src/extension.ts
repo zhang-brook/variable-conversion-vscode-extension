@@ -33,17 +33,8 @@ import { getUserConfigurations } from './utils/user-configuration';
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	try {
-		// 获取当前插件的扩展对象
-		const currentExtension = vscode.extensions.getExtension('coder-xiaomo.variable-conversion');
-		if (currentExtension) {
-			// 获取版本号
-			const version = currentExtension.packageJSON.version;
-			console.log('[Variable Conversion] current version:', version);
-		}
-	} catch (err) {
-		console.log('get current extension failed', err);
-	}
+	// 获取当前插件版本号
+	console.log('[Variable Conversion] current version:', context.extension.packageJSON.version);
 
 	// 用于记录当前选中的文本的长度
 	let selectTextLength = 0;

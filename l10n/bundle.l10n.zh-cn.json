@@ -1,0 +1,8 @@
+{
+  "Variable Conversion": "变量转换",
+  "Path Conversion": "路径转换",
+  "Convert the selected text using Variable Conversion": "使用变量转换处理选中文本",
+  "Convert the selected path using Path Conversion": "使用路径转换处理选中路径",
+  "Select the variable you want to convert and try again.": "请选择需要转换的变量后重试。",
+  "Select the path you want to convert and try again.": "请选择需要转换的路径后重试。"
+}

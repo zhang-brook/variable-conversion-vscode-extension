@@ -25,7 +25,7 @@ const handleEditorReplace = (targetCase: SupportPathFormat) => {
     const textList = selections.map(selection => document.getText(selection));
 
     if (textList.filter(text => text.length > 0).length === 0) {
-        vscode.window.showInformationMessage('请选择需要转换的路径后重试\nPlease select the path you want to convert and try again.');
+        vscode.window.showInformationMessage(vscode.l10n.t('Select the path you want to convert and try again.'));
         return;
     }
 

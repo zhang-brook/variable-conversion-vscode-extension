@@ -14,7 +14,8 @@ export function createStatusBarItem() {
     const createVariableConvertStatusBarItem = () => {
         const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
         // Icon Listing docs: https://code.visualstudio.com/api/references/icons-in-labels#icon-listing
-        statusBarItem.text = '$(find-replace)变量转换';
+        statusBarItem.text = `$(find-replace) ${vscode.l10n.t('Variable Conversion')}`;
+        statusBarItem.tooltip = vscode.l10n.t('Convert the selected text using Variable Conversion');
         statusBarItem.command = 'variable-conversion.convertCase';
         // statusBarItem.color = 'red';
         // statusBarItem.show();
@@ -23,7 +24,8 @@ export function createStatusBarItem() {
     // 路径转换状态栏 2024.12.14
     const createPathConvertStatusBarItem = () => {
         const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
-        statusBarItem.text = '$(sync-ignored)路径转换'; // italic symbol-null
+        statusBarItem.text = `$(sync-ignored) ${vscode.l10n.t('Path Conversion')}`; // italic symbol-null
+        statusBarItem.tooltip = vscode.l10n.t('Convert the selected path using Path Conversion');
         statusBarItem.command = 'variable-conversion.convertPath';
         statusBarItemList.push(statusBarItem);
         return statusBarItem;

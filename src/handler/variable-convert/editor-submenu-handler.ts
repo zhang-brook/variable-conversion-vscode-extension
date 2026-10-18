@@ -25,7 +25,7 @@ const handleEditorReplace = (targetCase: SupportVariableCase) => {
     const textList = selections.map(selection => document.getText(selection));
 
     if (textList.filter(text => text.length > 0).length === 0) {
-        vscode.window.showInformationMessage('请选择需要转换的变量后重试\nPlease select the variable you want to convert and try again.');
+        vscode.window.showInformationMessage(vscode.l10n.t('Select the variable you want to convert and try again.'));
         return;
     }
 

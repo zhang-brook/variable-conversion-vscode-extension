@@ -9,7 +9,7 @@
   "version": "3.0.0",
   // logo
   // 2026-.10.18 更新：VSCode Marketplace 要求不超过 1024x1024
-  "icon": "image/logo@1024.png",
+  "icon": "image/logo.compressed.png",
   // ↓ VSCode Marketplace publisher name
   "publisher": "coder-xiaomo",
   "engines": {

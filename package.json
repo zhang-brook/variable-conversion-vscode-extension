@@ -3,7 +3,7 @@
   "displayName": "Variable Conversion",
   "description": "%extension.description%",
   "version": "3.0.0",
-  "icon": "image/logo@1024.png",
+  "icon": "image/logo.compressed.png",
   "publisher": "coder-xiaomo",
   "engines": {
     "vscode": "^1.100.0"

@@ -1,0 +1,2 @@
+logo.compressed.png:
+扩展 logo 尺寸需 ≤1024px

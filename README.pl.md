@@ -1,7 +1,7 @@
 [English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Português (Brasil)](README.pt-BR.md) · [Italiano](README.it.md) · [Русский](README.ru.md) · **Polski** · [Türkçe](README.tr.md) · [Čeština](README.cs.md) · [Magyar](README.hu.md)
 
 <p align="center">
-  <img src="image/logo.png" width="128" alt="Logo rozszerzenia Konwersja zmiennych">
+  <img src="image/logo.compressed.png" width="128" alt="Logo rozszerzenia Konwersja zmiennych">
 </p>
 
 <h1 align="center">Konwersja zmiennych</h1>

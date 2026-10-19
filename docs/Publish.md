@@ -2,7 +2,7 @@
 
 推送与 `package.json` 版本一致的 tag 后，GitHub Actions 会自动构建并发布至 Visual Studio Marketplace 与 Open VSX Registry；也可在 Actions 页面手动运行 `Publish` 工作流并指定 tag。
 
-仓库需配置 Secrets：`VSCE_PAT`（Azure DevOps PAT，Marketplace Manage 权限）、`OVSX_PAT`（Open VSX Access Token）。具体步骤见 [配置 GitHub Actions 发布凭据](./Configure%20GitHub%20Action%20Publish%20Secrets.md)。如需避免长期 token，可为 Open VSX 配置 Trusted Publishing 并改用 `--trusted-publishing`。
+仓库需配置 Secret：`VSCE_PAT`（Azure DevOps PAT，Marketplace Manage 权限）；Open VSX 使用 Trusted Publishing（OIDC 短时令牌），无需存储 Access Token。具体步骤见 [配置 GitHub Actions 发布凭据](./Configure%20GitHub%20Action%20Publish%20Secrets.md)。
 
 ## 手动发布
 

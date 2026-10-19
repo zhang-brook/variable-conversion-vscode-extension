@@ -30,6 +30,8 @@ concurrency:
 
 permissions:
   contents: write
+  # OIDC ID token for Open VSX trusted publishing
+  id-token: write
 
 jobs:
   publish:
@@ -74,12 +76,9 @@ jobs:
         run: pnpm dlx @vscode/vsce@4 publish --packagePath "variable-conversion-${VERSION}.vsix" -p "$VSCE_PAT" --skip-duplicate
 
       - name: Publish to Open VSX Registry
-        # tag pushes stay disabled until the Open VSX publisher rename is resolved
-        if: false
-        # if: github.event_name != 'workflow_dispatch' || inputs.openvsx
-        env:
-          OVSX_PAT: ${{ secrets.OVSX_PAT }}
-        run: pnpm dlx ovsx@1 publish "variable-conversion-${VERSION}.vsix" -p "$OVSX_PAT" --skip-duplicate
+        if: github.event_name != 'workflow_dispatch' || inputs.openvsx
+        # ovsx >= 1.3.0 exchanges the workflow's OIDC token for a short-lived publish token
+        run: pnpm dlx ovsx@1.3 publish "variable-conversion-${VERSION}.vsix" --trusted-publishing --skip-duplicate
 
       - name: Attach VSIX to GitHub Release
         env:

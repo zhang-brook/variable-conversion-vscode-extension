@@ -25,6 +25,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -->
 
+## 3.0.2
+
+### Internal
+
+- Switch the Open VSX publish step to Trusted Publishing with short-lived OIDC tokens, dropping the long-lived `OVSX_PAT` secret; extension updates now reach the Open VSX registry again.
+- Pin LF line endings for all text files through `.gitattributes`.
+- Update the LICENSE copyright holder to `zhang-brook`.
+
 ## 3.0.1
 
 ### Fixed

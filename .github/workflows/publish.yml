@@ -87,6 +87,12 @@ jobs:
         run: |
           # Release notes come from this version's CHANGELOG section; fall back to generated notes when absent.
           if pnpm run changelog "$VERSION" --out release-notes.md; then
+            # A notes file replaces the generated body, so reuse the compare link GitHub would have added.
+            COMPARE_LINE="$(gh api "repos/$GITHUB_REPOSITORY/releases/generate-notes" \
+              -f tag_name="$TAG" --jq '.body' | grep -m1 '^\*\*Full Changelog\*\*:' || true)"
+            if [[ -n "$COMPARE_LINE" ]]; then
+              printf '\n%s\n' "$COMPARE_LINE" >> release-notes.md
+            fi
             NOTES="--notes-file release-notes.md"
           else
             echo "::notice::CHANGELOG.md has no section for $VERSION, falling back to generated notes."

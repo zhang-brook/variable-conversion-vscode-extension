@@ -55,7 +55,7 @@ jobs:
           TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
         run: |
           VERSION="${TAG#v}"
-          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
             echo "::error::Tag '$TAG' is not a release version."
             exit 1
           fi
@@ -67,10 +67,16 @@ jobs:
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
 
       - name: Package extension
-        run: pnpm dlx @vscode/vsce@4 package --changelog-path CHANGELOG.md
+        run: |
+          # The Marketplace rejects semver prerelease versions, but the VSIX still carries the pre-release flag for Open VSX.
+          PRERELEASE=""
+          if [[ "$VERSION" == *-* ]]; then
+            PRERELEASE="--pre-release"
+          fi
+          pnpm dlx @vscode/vsce@4 package --changelog-path CHANGELOG.md $PRERELEASE
 
       - name: Publish to Visual Studio Marketplace
-        if: github.event_name != 'workflow_dispatch' || inputs.marketplace
+        if: (github.event_name != 'workflow_dispatch' || inputs.marketplace) && !contains(env.VERSION, '-')
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
         run: pnpm dlx @vscode/vsce@4 publish --packagePath "variable-conversion-${VERSION}.vsix" -p "$VSCE_PAT" --skip-duplicate
@@ -98,7 +104,11 @@ jobs:
             echo "::notice::CHANGELOG.md has no section for $VERSION, falling back to generated notes."
             NOTES="--generate-notes"
           fi
-          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --title "$TAG" $NOTES --verify-tag
+          PRERELEASE=""
+          if [[ "$VERSION" == *-* ]]; then
+            PRERELEASE="--prerelease"
+          fi
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --title "$TAG" $NOTES $PRERELEASE --verify-tag
           gh release upload "$TAG" "variable-conversion-${VERSION}.vsix" --clobber
 
       - name: Upload VSIX artifact

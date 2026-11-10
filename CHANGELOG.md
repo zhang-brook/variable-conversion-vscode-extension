@@ -25,6 +25,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -->
 
+## 3.0.3-alpha.2
+
+### Internal
+
+- Upgrade the pinned pnpm version from 12.11.2 to 12.16.1.
+- Refresh locked development dependencies, including `@types/vscode`, `eslint` and `typescript-eslint`.
+
 ## 3.0.3-alpha.1
 
 ### Internal

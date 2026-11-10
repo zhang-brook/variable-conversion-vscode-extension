@@ -8,7 +8,7 @@
   "engines": {
     "vscode": "^1.100.0"
   },
-  "packageManager": "pnpm@12.11.2",
+  "packageManager": "pnpm@12.16.1",
   "categories": [
     "Other"
   ],
